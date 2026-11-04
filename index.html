@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
   <title>Zahra — Portofolio Kreatif</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  
+
   <!-- Google Fonts for playful and clean typography -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800;900&family=Shrikhand&display=swap" rel="stylesheet"/>
-  
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800;900&family=Shrikhand&display=swap"
+    rel="stylesheet" />
+
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <script>
     tailwind.config = {
@@ -22,45 +25,51 @@
         extend: {
           colors: {
             brand: {
-              plum: '#4a0026',
-              deepPlum: '#2b0016',
-              wine: '#610a38',
-              pink: '#ff4f8b',
-              softPink: '#ff7fa8',
-              lightPink: '#fecdd3',
-              butter: '#ffdf6d',
-              cream: '#fffdfa',
-              mint: '#4ade80'
-            }
+              plum: "#4a0026",
+              deepPlum: "#2b0016",
+              wine: "#610a38",
+              pink: "#ff4f8b",
+              softPink: "#ff7fa8",
+              lightPink: "#fecdd3",
+              butter: "#ffdf6d",
+              cream: "#fffdfa",
+              mint: "#4ade80",
+            },
           },
           fontFamily: {
-            title: ['"Fredoka One"', '"Shrikhand"', 'cursive', 'sans-serif'],
-            hand: ['"Gaegu"', 'cursive', 'sans-serif'],
-            body: ['"Nunito"', 'sans-serif']
-          }
-        }
-      }
-    }
+            title: ['"Fredoka One"', '"Shrikhand"', "cursive", "sans-serif"],
+            hand: ['"Gaegu"', "cursive", "sans-serif"],
+            body: ['"Nunito"', "sans-serif"],
+          },
+        },
+      },
+    };
   </script>
 </head>
-<body class="bg-brand-deepPlum bg-ambient-stars font-body text-brand-cream selection:bg-brand-pink selection:text-white antialiased min-h-screen flex flex-col items-center justify-start py-0 md:py-6 relative">
 
+<body
+  class="bg-brand-deepPlum bg-ambient-stars font-body text-brand-cream selection:bg-brand-pink selection:text-white antialiased min-h-screen flex flex-col items-center justify-start py-0 md:py-6 relative">
   <!-- Desktop Top Control Bar (Visible on md+ screens) -->
-  <nav class="hidden md:flex items-center justify-between w-full max-w-4xl px-6 py-2.5 mb-4 bg-brand-wine/70 backdrop-blur-md border border-brand-pink/25 rounded-2xl shadow-xl z-30">
+  <nav
+    class="hidden md:flex items-center justify-between w-full max-w-4xl px-6 py-2.5 mb-4 bg-brand-wine/70 backdrop-blur-md border border-brand-pink/25 rounded-2xl shadow-xl z-30">
     <div class="flex items-center gap-2">
       <span class="text-xl">🌸</span>
       <span class="font-chunky text-white text-sm tracking-wide">Zahra</span>
-      <span class="text-xs text-brand-butter font-bold bg-brand-deepPlum/60 px-2.5 py-0.5 rounded-full border border-brand-pink/20">Video Editor &amp; Content Creator</span>
+      <span
+        class="text-xs text-brand-butter font-bold bg-brand-deepPlum/60 px-2.5 py-0.5 rounded-full border border-brand-pink/20">Video
+        Editor &amp; Content Creator</span>
     </div>
-    
+
     <div class="flex items-center gap-3">
       <!-- Toggle Mobile / Wide View Mode -->
-      <button onclick="toggleViewMode()" class="btn-bounce bg-brand-deepPlum hover:bg-brand-plum text-brand-cream text-xs font-chunky px-3.5 py-1.5 rounded-full border border-brand-pink/40 shadow-sm flex items-center gap-1.5 transition">
+      <button onclick="toggleViewMode()"
+        class="btn-bounce bg-brand-deepPlum hover:bg-brand-plum text-brand-cream text-xs font-chunky px-3.5 py-1.5 rounded-full border border-brand-pink/40 shadow-sm flex items-center gap-1.5 transition">
         <span id="toggle-view-btn-text">Switch to 💻 Wide View</span>
       </button>
 
       <!-- Quick Connect CTA -->
-      <button onclick="openModal('modal-contact')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-xs font-chunky px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 transition">
+      <button onclick="openModal('modal-contact')"
+        class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-xs font-chunky px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 transition">
         <span>Connect</span>
         <span>💌</span>
       </button>
@@ -68,23 +77,30 @@
   </nav>
 
   <!-- Mobile / Responsive Container (max-w-[430px] dengan smooth desktop responsiveness) -->
-  <main id="main-portfolio-container" class="w-full max-w-[430px] bg-portfolio-gradient min-h-screen relative overflow-hidden flex flex-col shadow-2xl md:rounded-3xl border-0 md:border-4 md:border-brand-wine/80 transition-all duration-300 pb-16">
-
+  <main id="main-portfolio-container"
+    class="w-full max-w-[430px] bg-portfolio-gradient min-h-screen relative overflow-hidden flex flex-col shadow-2xl md:rounded-3xl border-0 md:border-4 md:border-brand-wine/80 transition-all duration-300 pb-16">
     <!-- BEGIN: HeroSection -->
     <header class="relative px-6 pt-10 pb-6 flex flex-col items-center">
       <!-- Decorative Doodles Background -->
-      <div class="absolute top-8 left-4 text-brand-butter text-2xl select-none animate-pulse">✦</div>
-      <div class="absolute top-20 right-6 text-brand-butter text-xl select-none animate-pulse-soft">✷</div>
-      <div class="absolute top-44 left-8 text-brand-butter text-lg select-none">✺</div>
+      <div class="absolute top-8 left-4 text-brand-butter text-2xl select-none animate-pulse">
+        ✦
+      </div>
+      <div class="absolute top-20 right-6 text-brand-butter text-xl select-none animate-pulse-soft">
+        ✷
+      </div>
+      <div class="absolute top-44 left-8 text-brand-butter text-lg select-none">
+        ✺
+      </div>
 
       <!-- Main Playful Portfolio Badge & Typography -->
       <div class="w-full flex items-center justify-between mt-2">
         <div class="relative flex flex-col z-10">
           <!-- Year Stamp -->
-          <div class="inline-block self-start mb-1 ml-4 bg-brand-wine border border-brand-pink/50 rounded-full px-2.5 py-0.5 shadow-sm">
+          <div
+            class="inline-block self-start mb-1 ml-4 bg-brand-wine border border-brand-pink/50 rounded-full px-2.5 py-0.5 shadow-sm">
             <span class="text-[11px] font-chunky text-white tracking-wider">2026</span>
           </div>
-          
+
           <!-- "PORT" -->
           <div class="flex items-center text-5xl font-chunky tracking-tight text-white drop-shadow-md select-none">
             <span class="text-brand-softPink letter-tilt-1 cursor-pointer">P</span>
@@ -94,12 +110,18 @@
           </div>
 
           <!-- "FOLIO" with Flower 'O' -->
-          <div class="flex items-center text-5xl font-chunky tracking-tight text-white drop-shadow-md -mt-1 select-none">
+          <div
+            class="flex items-center text-5xl font-chunky tracking-tight text-white drop-shadow-md -mt-1 select-none">
             <span class="text-white letter-tilt-2 cursor-pointer">F</span>
             <!-- Flower 'O' Doodle with interactive spin on hover -->
-            <span class="relative inline-flex items-center justify-center mx-0.5 cursor-pointer group" title="Spinning Flower Doodle">
-              <svg class="w-10 h-10 text-brand-butter animate-spin-slow drop-shadow group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 100 100">
-                <path d="M50 20 C55 5, 75 5, 75 25 C90 25, 95 45, 80 55 C95 65, 85 85, 70 80 C60 95, 40 95, 30 80 C15 85, 5 65, 20 55 C5 45, 10 25, 25 25 C25 5, 45 5, 50 20 Z"></path>
+            <span class="relative inline-flex items-center justify-center mx-0.5 cursor-pointer group"
+              title="Spinning Flower Doodle">
+              <svg
+                class="w-10 h-10 text-brand-butter animate-spin-slow drop-shadow group-hover:scale-110 transition-transform"
+                fill="currentColor" viewBox="0 0 100 100">
+                <path
+                  d="M50 20 C55 5, 75 5, 75 25 C90 25, 95 45, 80 55 C95 65, 85 85, 70 80 C60 95, 40 95, 30 80 C15 85, 5 65, 20 55 C5 45, 10 25, 25 25 C25 5, 45 5, 50 20 Z">
+                </path>
               </svg>
               <span class="absolute w-3.5 h-3.5 rounded-full bg-brand-wine"></span>
             </span>
@@ -124,18 +146,22 @@
           <!-- Cottage House Graphic -->
           <div class="relative w-full h-full flex flex-col items-center justify-end">
             <!-- Roof -->
-            <div class="w-32 h-14 bg-brand-pink rounded-t-xl relative border-b-4 border-brand-wine shadow-md transform -skew-x-2">
+            <div
+              class="w-32 h-14 bg-brand-pink rounded-t-xl relative border-b-4 border-brand-wine shadow-md transform -skew-x-2">
               <div class="absolute inset-x-2 bottom-1 h-1.5 bg-brand-softPink rounded-full opacity-60"></div>
             </div>
             <!-- House Body -->
-            <div class="w-28 h-20 bg-amber-50 rounded-b-lg border-2 border-amber-200/50 flex items-center justify-between px-3 relative shadow-inner">
+            <div
+              class="w-28 h-20 bg-amber-50 rounded-b-lg border-2 border-amber-200/50 flex items-center justify-between px-3 relative shadow-inner">
               <!-- Window with shutter -->
               <div class="w-9 h-11 bg-pink-100 border-2 border-brand-pink rounded-sm flex flex-col p-0.5">
                 <div class="w-full h-1/2 border-b border-brand-pink/50"></div>
                 <div class="w-full h-1/2"></div>
               </div>
               <!-- Front Door -->
-              <div class="w-8 h-14 bg-brand-pink rounded-t-md self-end border-t border-l border-brand-wine/30 flex items-center justify-end pr-1 cursor-pointer hover:bg-brand-softPink transition-colors" title="Knock knock!">
+              <div
+                class="w-8 h-14 bg-brand-pink rounded-t-md self-end border-t border-l border-brand-wine/30 flex items-center justify-end pr-1 cursor-pointer hover:bg-brand-softPink transition-colors"
+                title="Knock knock!">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
               </div>
             </div>
@@ -146,9 +172,11 @@
       </div>
 
       <!-- Welcome Subtitle -->
-      <p class="mt-3 text-xs md:text-sm font-doodle tracking-wide text-brand-cream/80 text-center flex items-center gap-1.5 select-none">
+      <p
+        class="mt-3 text-xs md:text-sm font-doodle tracking-wide text-brand-cream/80 text-center flex items-center gap-1.5 select-none">
         <span>Selamat datang di</span>
-        <span class="text-brand-butter font-bold italic underline decoration-wavy decoration-brand-pink">portofolioku!</span>
+        <span
+          class="text-brand-butter font-bold italic underline decoration-wavy decoration-brand-pink">portofolioku!</span>
         <span class="text-brand-pink">✿</span>
       </p>
     </header>
@@ -161,42 +189,68 @@
         <h2 class="text-4xl font-chunky text-brand-butter tracking-wider drop-shadow-md select-none">
           Halo!
         </h2>
-        <div class="text-xs bg-brand-wine/70 text-brand-cream/90 px-3 py-1 rounded-full border border-brand-pink/20 font-bold select-none">
+        <div
+          class="text-xs bg-brand-wine/70 text-brand-cream/90 px-3 py-1 rounded-full border border-brand-pink/20 font-bold select-none">
           Profil &amp; Bio ✦
         </div>
       </div>
 
       <!-- Bio Intro Text -->
-      <p class="text-xs text-brand-cream/90 leading-relaxed font-body mb-5 bg-black/20 p-3 rounded-2xl backdrop-blur-sm border border-white/5">
-        Saya <strong class="text-brand-butter font-bold">Zahra</strong>, mahasiswa yang memiliki ketertarikan pada bidang <em>content creation</em> dan media sosial. Saya terlibat dalam proses perencanaan, produksi, publikasi, serta dokumentasi konten digital pada berbagai kegiatan kampus — mulai dari editing video dengan CapCut, desain konten dengan Canva, hingga dasar UI/UX dengan Figma. Saya merupakan pribadi yang kreatif, adaptif, teliti, dan mampu bekerja secara individu maupun dalam tim.
+      <p
+        class="text-xs text-brand-cream/90 leading-relaxed font-body mb-5 bg-black/20 p-3 rounded-2xl backdrop-blur-sm border border-white/5">
+        Saya <strong class="text-brand-butter font-bold">Zahra</strong>,
+        mahasiswa aktif program studi sistem informasi yang memiliki
+        ketertarikan pada bidang <em>content creation</em> dan media sosial.
+        Saya terlibat dalam proses perencanaan, produksi, publikasi, serta
+        dokumentasi konten digital pada berbagai kegiatan kampus — mulai dari
+        editing video dengan CapCut, desain konten dengan Canva, hingga dasar
+        UI/UX dengan Figma. Saya merupakan pribadi yang kreatif, adaptif,
+        teliti, dan mampu bekerja secara individu maupun dalam tim.
       </p>
 
       <!-- Profile Portrait & Badges Grid -->
       <div class="flex items-center gap-4">
         <!-- Polaroid/ID Style Portrait Card with Click to Zoom -->
-        <div class="relative w-36 flex-shrink-0 cursor-pointer group" onclick="openLightbox('assets/images/zahra-portrait.jpg', 'Zahra — Portrait')">
-          <div class="bg-brand-butter rounded-3xl p-1.5 shadow-lg transform -rotate-1 group-hover:rotate-0 transition-transform duration-200 relative">
+        <div class="relative w-36 flex-shrink-0 cursor-pointer group" onclick="
+              openLightbox(
+                'assets/images/zahra-portrait.jpg',
+                'Zahra — Portrait',
+              )
+            ">
+          <div
+            class="bg-brand-butter rounded-3xl p-1.5 shadow-lg transform -rotate-1 group-hover:rotate-0 transition-transform duration-200 relative">
             <!-- Cute sticker flower -->
-            <div class="absolute -top-2 -left-2 text-xl drop-shadow select-none animate-bounce">🌸</div>
+            <div class="absolute -top-2 -left-2 text-xl drop-shadow select-none animate-bounce">
+              🌸
+            </div>
 
-            <div class="w-full h-44 rounded-2xl overflow-hidden bg-brand-plum relative flex items-center justify-center">
+            <div
+              class="w-full h-44 rounded-2xl overflow-hidden bg-brand-plum relative flex items-center justify-center">
               <!-- Fallback initial jika foto belum ditambahkan -->
               <span class="text-6xl font-chunky text-brand-butter/60 select-none">Z</span>
-              <img alt="Zahra Portrait" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" src="assets/images/zahra-portrait.jpg" onerror="this.style.display='none'"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+              <img alt="Zahra Portrait"
+                class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                src="assets/images/zahra-portrait.jpg" onerror="this.style.display = 'none'" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+              </div>
 
               <!-- Zoom overlay hint -->
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded-full backdrop-blur-sm">🔍 Zoom</span>
+              <div
+                class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded-full backdrop-blur-sm">🔍
+                  Zoom</span>
               </div>
             </div>
           </div>
 
           <!-- Cute Roles Stickers -->
-          <div class="absolute -bottom-2 -left-2 bg-white text-brand-wine px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-md transform -rotate-3 border border-pink-200 select-none">
+          <div
+            class="absolute -bottom-2 -left-2 bg-white text-brand-wine px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-md transform -rotate-3 border border-pink-200 select-none">
             Video Editor 🎬
           </div>
-          <div class="absolute -top-2 -right-3 bg-white text-brand-pink px-2 py-0.5 rounded-full text-[9px] font-bold shadow-md transform rotate-6 border border-pink-200 select-none">
+          <div
+            class="absolute -top-2 -right-3 bg-white text-brand-pink px-2 py-0.5 rounded-full text-[9px] font-bold shadow-md transform rotate-6 border border-pink-200 select-none">
             Content Creator
           </div>
         </div>
@@ -205,7 +259,8 @@
         <div class="flex-1 flex flex-col justify-between space-y-3">
           <!-- Let's Connect Button -->
           <div class="flex flex-col items-start space-y-1">
-            <button onclick="openModal('modal-contact')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink transition text-white px-4 py-1.5 rounded-full text-xs font-chunky tracking-wide shadow-md active:scale-95 flex items-center gap-1.5">
+            <button onclick="openModal('modal-contact')"
+              class="btn-bounce bg-brand-pink hover:bg-brand-softPink transition text-white px-4 py-1.5 rounded-full text-xs font-chunky tracking-wide shadow-md active:scale-95 flex items-center gap-1.5">
               <span>Yuk Terhubung</span>
               <span class="text-xs">💌</span>
             </button>
@@ -214,20 +269,27 @@
           <!-- Social Contact Mini Info -->
           <div class="space-y-1.5 text-[11px] font-medium text-brand-cream/85">
             <!-- Email (with one-click copy) -->
-            <button onclick="copyEmail('zahraraaa287@gmail.com')" class="flex items-center gap-2 hover:text-brand-butter transition truncate text-left w-full group" title="Klik untuk salin email">
-              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">✉</span>
+            <button onclick="copyEmail('zahraraaa287@gmail.com')"
+              class="flex items-center gap-2 hover:text-brand-butter transition truncate text-left w-full group"
+              title="Klik untuk salin email">
+              <span
+                class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">✉</span>
               <span class="truncate">zahraraaa287@gmail.com</span>
             </button>
 
             <!-- Instagram -->
-            <a href="https://instagram.com/zahrarraa__" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-butter transition group">
-              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">📷</span>
+            <a href="https://instagram.com/zahrarraa__" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-2 hover:text-brand-butter transition group">
+              <span
+                class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">📷</span>
               <span>@zahrarraa__</span>
             </a>
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/6282394631197" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-butter transition group">
-              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">💬</span>
+            <a href="https://wa.me/6282394631197" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-2 hover:text-brand-butter transition group">
+              <span
+                class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">💬</span>
               <span>(+62) 823-9463-1197</span>
             </a>
           </div>
@@ -250,11 +312,31 @@
 
         <!-- Badges Scrollable Row (klik untuk lihat karya terkait) -->
         <div class="flex flex-wrap gap-1.5 items-center">
-          <button onclick="openShowcase('video')" class="bg-brand-butter text-brand-deepPlum px-2.5 py-1 rounded-xl text-[11px] font-chunky shadow-sm cursor-pointer hover:scale-105 active:scale-95 transition-transform" title="Klik: lihat karya Video Editing">🎬 CapCut</button>
-          <button onclick="openShowcase('design')" class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition" title="Klik: lihat karya Desain">🎨 Canva</button>
-          <button onclick="openShowcase('design')" class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition" title="Klik: lihat karya Desain">Figma</button>
-          <button onclick="openShowcase('social')" class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition" title="Klik: lihat karya Media Sosial">📱 Instagram &amp; TikTok</button>
-          <button onclick="openShowcase('doc')" class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition" title="Klik: lihat karya Dokumentasi">📷 Foto &amp; Video</button>
+          <button onclick="openShowcase('video')"
+            class="bg-brand-butter text-brand-deepPlum px-2.5 py-1 rounded-xl text-[11px] font-chunky shadow-sm cursor-pointer hover:scale-105 active:scale-95 transition-transform"
+            title="Klik: lihat karya Video Editing">
+            🎬 CapCut
+          </button>
+          <button onclick="openShowcase('design')"
+            class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition"
+            title="Klik: lihat karya Desain">
+            🎨 Canva
+          </button>
+          <button onclick="openShowcase('design')"
+            class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition"
+            title="Klik: lihat karya Desain">
+            Figma
+          </button>
+          <button onclick="openShowcase('social')"
+            class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition"
+            title="Klik: lihat karya Media Sosial">
+            📱 Instagram &amp; TikTok
+          </button>
+          <button onclick="openShowcase('doc')"
+            class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-pointer hover:border-brand-pink hover:scale-105 active:scale-95 transition"
+            title="Klik: lihat karya Dokumentasi">
+            📷 Foto &amp; Video
+          </button>
         </div>
       </div>
 
@@ -292,10 +374,12 @@
               <span class="text-brand-pink text-[10px]">✔</span> Adaptif
             </li>
             <li class="flex items-center gap-1">
-              <span class="text-brand-pink text-[10px]">✔</span> Kerja sama tim
+              <span class="text-brand-pink text-[10px]">✔</span> Kerja sama
+              tim
             </li>
             <li class="flex items-center gap-1">
-              <span class="text-brand-pink text-[10px]">✔</span> Manajemen waktu
+              <span class="text-brand-pink text-[10px]">✔</span> Manajemen
+              waktu
             </li>
             <li class="flex items-center gap-1">
               <span class="text-brand-pink text-[10px]">✔</span> Komunikasi
@@ -318,7 +402,8 @@
       <!-- Experience Cards Grid/Layout -->
       <div class="space-y-4">
         <!-- Pink Rounded Sticky Note Card -->
-        <div class="relative bg-brand-pink text-white rounded-3xl p-4 shadow-lg border border-pink-400/40 hover:shadow-xl transition-shadow">
+        <div
+          class="relative bg-brand-pink text-white rounded-3xl p-4 shadow-lg border border-pink-400/40 hover:shadow-xl transition-shadow">
           <!-- Flower Pushpin / Sticker -->
           <div class="absolute -top-2.5 right-6 text-xl select-none">🌸</div>
           <ul class="text-[11px] space-y-2.5 leading-snug">
@@ -327,35 +412,48 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
                 Admin Eksternal
               </p>
-              <p class="text-[10px] text-pink-100 pl-3">HMSI Untad (2026 — Sekarang) • Mengelola &amp; menjadwalkan konten Instagram &amp; TikTok</p>
+              <p class="text-[10px] text-pink-100 pl-3">
+                HMSI Untad (2026 — Sekarang) • Mengelola &amp; menjadwalkan
+                konten Instagram &amp; TikTok
+              </p>
             </li>
             <li>
               <p class="font-bold text-white flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
                 Tim Konten PDD
               </p>
-              <p class="text-[10px] text-pink-100 pl-3">IFEST 2026 • Produksi konten acara</p>
+              <p class="text-[10px] text-pink-100 pl-3">
+                IFEST 2026 • Produksi konten acara
+              </p>
             </li>
             <li>
               <p class="font-bold text-white flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
                 Admin Media Sosial
               </p>
-              <p class="text-[10px] text-pink-100 pl-3">Dies Natalis HMTI 2026 • Pengelolaan akun media sosial</p>
+              <p class="text-[10px] text-pink-100 pl-3">
+                Dies Natalis HMTI 2026 • Pengelolaan akun media sosial
+              </p>
             </li>
             <li>
               <p class="font-bold text-white flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
                 Admin Media Sosial &amp; PDD
               </p>
-              <p class="text-[10px] text-pink-100 pl-3">IFEST 2025 • Membuat konten &amp; mengedit video promo (CapCut)</p>
+              <p class="text-[10px] text-pink-100 pl-3">
+                IFEST 2025 • Membuat konten &amp; mengedit video promo
+                (CapCut)
+              </p>
             </li>
             <li>
               <p class="font-bold text-white flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
                 Admin, PDD &amp; Talent Konten
               </p>
-              <p class="text-[10px] text-pink-100 pl-3">Dies Natalis HMTI 2025 • Membuat konten &amp; mengedit video (CapCut)</p>
+              <p class="text-[10px] text-pink-100 pl-3">
+                Dies Natalis HMTI 2025 • Membuat konten &amp; mengedit video
+                (CapCut)
+              </p>
             </li>
           </ul>
         </div>
@@ -382,9 +480,6 @@
                 <span class="text-[9.5px] text-brand-lightPink/80">Triwulan HMTI (2025)</span>
               </li>
               <li>
-                <strong class="text-white block">• Peserta Kompetisi UI/UX</strong>
-                <span class="text-[9.5px] text-brand-lightPink/80">Recursion — Team Pixel Pioneers</span>
-              </li>
             </ul>
 
             <!-- Right Window Sill: Potted Plant -->
@@ -392,7 +487,9 @@
               <div class="mt-2 flex items-center justify-center text-3xl select-none" title="Terus bertumbuh!">
                 🪴
               </div>
-              <p class="text-[9px] text-brand-cream/60 text-center mt-1 font-doodle">terus bertumbuh 🌱</p>
+              <p class="text-[9px] text-brand-cream/60 text-center mt-1 font-doodle">
+                terus bertumbuh 🌱
+              </p>
             </div>
           </div>
         </div>
@@ -408,11 +505,14 @@
           <span>Tonton</span>
           <span>〰️</span>
         </div>
-        <h3 class="text-3xl font-chunky text-brand-butter tracking-wider flex items-center justify-center gap-2 drop-shadow-md">
+        <h3
+          class="text-3xl font-chunky text-brand-butter tracking-wider flex items-center justify-center gap-2 drop-shadow-md">
           <span>SHOWREEL</span>
           <span class="text-brand-butter text-xl">🎬</span>
         </h3>
-        <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">Kumpulan hasil edit videoku ✨</p>
+        <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">
+          Kumpulan hasil edit videoku ✨
+        </p>
       </div>
 
       <!-- Grid video — daftar file & judul diatur di assets/js/main.js (showreelVideos) -->
@@ -431,32 +531,39 @@
           <span>Daftar</span>
           <span>〰️</span>
         </div>
-        <h3 class="text-3xl font-chunky text-brand-butter tracking-wider flex items-center justify-center gap-2 drop-shadow-md">
+        <h3
+          class="text-3xl font-chunky text-brand-butter tracking-wider flex items-center justify-center gap-2 drop-shadow-md">
           <span>KARYA</span>
           <span class="text-brand-butter text-xl">✶</span>
         </h3>
-        <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">Klik chapter di bawah untuk lihat karya! 📖✨</p>
+        <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">
+          Klik chapter di bawah untuk lihat karya! 📖✨
+        </p>
       </div>
 
       <!-- Pill Nav Buttons Grid (2x2) -->
       <div class="grid grid-cols-2 gap-3" data-purpose="showcase-nav-pills">
         <!-- 1. Video Editing -->
-        <button onclick="openShowcase('video')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+        <button onclick="openShowcase('video')"
+          class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
           <span>1. VIDEO EDITING</span>
         </button>
 
         <!-- 2. Media Sosial -->
-        <button onclick="openShowcase('social')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+        <button onclick="openShowcase('social')"
+          class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
           <span>2. MEDIA SOSIAL</span>
         </button>
 
         <!-- 3. Desain -->
-        <button onclick="openShowcase('design')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+        <button onclick="openShowcase('design')"
+          class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
           <span>3. DESAIN</span>
         </button>
 
         <!-- 4. Dokumentasi -->
-        <button onclick="openShowcase('doc')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+        <button onclick="openShowcase('doc')"
+          class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
           <span>4. DOKUMENTASI</span>
         </button>
       </div>
@@ -469,21 +576,29 @@
       <div class="relative w-full h-32 overflow-hidden">
         <!-- Mountain/Hills backdrop -->
         <div class="absolute inset-0 bg-[#240313]"></div>
-        
+
         <!-- Curving Hill Shape -->
         <svg class="absolute bottom-0 w-full h-28" fill="none" preserveAspectRatio="none" viewBox="0 0 430 120">
           <path d="M0,70 Q130,20 280,60 T430,30 L430,120 L0,120 Z" fill="#38051e"></path>
           <path d="M0,90 Q150,45 320,80 T430,60 L430,120 L0,120 Z" fill="#1f0211"></path>
           <!-- Cute Winding Road -->
-          <path d="M120,120 C180,105 280,100 370,70 C390,63 410,55 430,50 L430,65 C390,75 330,105 200,120 Z" fill="#b8a898" opacity="0.9"></path>
+          <path d="M120,120 C180,105 280,100 370,70 C390,63 410,55 430,50 L430,65 C390,75 330,105 200,120 Z"
+            fill="#b8a898" opacity="0.9"></path>
           <!-- Road edge highlight -->
-          <path d="M120,120 C180,105 280,100 370,70" fill="none" stroke="#fef3c7" stroke-dasharray="4 4" stroke-width="2"></path>
+          <path d="M120,120 C180,105 280,100 370,70" fill="none" stroke="#fef3c7" stroke-dasharray="4 4"
+            stroke-width="2"></path>
         </svg>
 
         <!-- Cute Pine Trees on Hillside -->
-        <div class="absolute bottom-6 right-8 text-emerald-800 text-lg select-none">🌲</div>
-        <div class="absolute bottom-8 right-16 text-emerald-900 text-base select-none">🌲</div>
-        <div class="absolute bottom-4 left-6 text-emerald-900 text-base select-none">🌱</div>
+        <div class="absolute bottom-6 right-8 text-emerald-800 text-lg select-none">
+          🌲
+        </div>
+        <div class="absolute bottom-8 right-16 text-emerald-900 text-base select-none">
+          🌲
+        </div>
+        <div class="absolute bottom-4 left-6 text-emerald-900 text-base select-none">
+          🌱
+        </div>
 
         <!-- Copyright / Mini signature note -->
         <div class="absolute bottom-2 inset-x-0 text-center select-none">
@@ -494,24 +609,30 @@
       </div>
     </footer>
     <!-- END: FooterLandscape -->
-
   </main>
 
   <!-- ========================================================================= -->
   <!-- MODAL: Table of Contents Showcase Drawer -->
   <!-- ========================================================================= -->
-  <div id="modal-showcase" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+  <div id="modal-showcase"
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div
+      class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
       <!-- Modal Header -->
       <div class="bg-brand-wine/80 px-5 py-4 border-b border-brand-pink/30 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span id="showcase-icon" class="text-2xl">🎨</span>
           <div>
-            <h3 id="showcase-title" class="font-chunky text-white text-base tracking-wide">Brand Identity</h3>
-            <p id="showcase-desc" class="text-[11px] text-brand-lightPink/80 leading-tight">Featured works &amp; case studies</p>
+            <h3 id="showcase-title" class="font-chunky text-white text-base tracking-wide">
+              Brand Identity
+            </h3>
+            <p id="showcase-desc" class="text-[11px] text-brand-lightPink/80 leading-tight">
+              Featured works &amp; case studies
+            </p>
           </div>
         </div>
-        <button onclick="closeModal('modal-showcase')" class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
+        <button onclick="closeModal('modal-showcase')"
+          class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
           ✕
         </button>
       </div>
@@ -524,7 +645,8 @@
       <!-- Modal Footer -->
       <div class="bg-brand-wine/40 px-5 py-3 border-t border-white/5 flex items-center justify-between text-xs">
         <span class="text-brand-cream/60 font-doodle">Portofolio Zahra</span>
-        <button onclick="closeModal('modal-showcase')" class="bg-brand-pink hover:bg-brand-softPink text-white font-chunky px-4 py-1.5 rounded-full text-xs shadow-md transition">
+        <button onclick="closeModal('modal-showcase')"
+          class="bg-brand-pink hover:bg-brand-softPink text-white font-chunky px-4 py-1.5 rounded-full text-xs shadow-md transition">
           Tutup Chapter
         </button>
       </div>
@@ -534,21 +656,27 @@
   <!-- ========================================================================= -->
   <!-- MODAL: Let's Connect Contact Modal -->
   <!-- ========================================================================= -->
-  <div id="modal-contact" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-sm flex flex-col shadow-2xl overflow-hidden relative">
+  <div id="modal-contact"
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div
+      class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-sm flex flex-col shadow-2xl overflow-hidden relative">
       <div class="bg-brand-wine px-5 py-4 border-b border-brand-pink/30 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="text-xl">💌</span>
-          <h3 class="font-chunky text-white text-base tracking-wide">Yuk Terhubung!</h3>
+          <h3 class="font-chunky text-white text-base tracking-wide">
+            Yuk Terhubung!
+          </h3>
         </div>
-        <button onclick="closeModal('modal-contact')" class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
+        <button onclick="closeModal('modal-contact')"
+          class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
           ✕
         </button>
       </div>
 
       <div class="p-5 space-y-4">
         <p class="text-xs text-brand-cream/80 leading-relaxed">
-          Punya proyek seru, butuh editor video, atau sekadar mau kenalan? Jangan ragu untuk menghubungiku kapan saja! 🌸
+          Punya proyek seru, butuh editor video, atau sekadar mau kenalan?
+          Jangan ragu untuk menghubungiku kapan saja! 🌸
         </p>
 
         <!-- Quick copy email box -->
@@ -557,7 +685,8 @@
             <span class="text-[10px] text-brand-butter uppercase font-bold block">Alamat Email</span>
             <span class="text-xs text-white font-mono truncate">zahraraaa287@gmail.com</span>
           </div>
-          <button onclick="copyEmail('zahraraaa287@gmail.com')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 transition flex-shrink-0">
+          <button onclick="copyEmail('zahraraaa287@gmail.com')"
+            class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 transition flex-shrink-0">
             <span>Salin</span>
             <span>📋</span>
           </button>
@@ -565,15 +694,18 @@
 
         <!-- Social links -->
         <div class="space-y-2 pt-1">
-          <a href="mailto:zahraraaa287@gmail.com" class="w-full bg-brand-wine hover:bg-brand-plum text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 border border-brand-pink/20 transition">
+          <a href="mailto:zahraraaa287@gmail.com"
+            class="w-full bg-brand-wine hover:bg-brand-plum text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 border border-brand-pink/20 transition">
             <span>Kirim Email Langsung</span>
             <span>✉️</span>
           </a>
-          <a href="https://instagram.com/zahrarraa__" target="_blank" rel="noopener noreferrer" class="w-full bg-black/20 hover:bg-black/40 text-brand-lightPink text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-2 border border-white/5 transition">
+          <a href="https://instagram.com/zahrarraa__" target="_blank" rel="noopener noreferrer"
+            class="w-full bg-black/20 hover:bg-black/40 text-brand-lightPink text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-2 border border-white/5 transition">
             <span>Follow Instagram (@zahrarraa__)</span>
             <span>📷</span>
           </a>
-          <a href="https://wa.me/6282394631197" target="_blank" rel="noopener noreferrer" class="w-full bg-black/20 hover:bg-black/40 text-brand-lightPink text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-2 border border-white/5 transition">
+          <a href="https://wa.me/6282394631197" target="_blank" rel="noopener noreferrer"
+            class="w-full bg-black/20 hover:bg-black/40 text-brand-lightPink text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-2 border border-white/5 transition">
             <span>Chat WhatsApp</span>
             <span>💬</span>
           </a>
@@ -585,12 +717,16 @@
   <!-- ========================================================================= -->
   <!-- MODAL: Lightbox for Image Zoom -->
   <!-- ========================================================================= -->
-  <div id="modal-lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4" onclick="closeModal('modal-lightbox')">
+  <div id="modal-lightbox"
+    class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4"
+    onclick="closeModal('modal-lightbox')">
     <div class="relative max-w-2xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeModal('modal-lightbox')" class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-pink transition">
+      <button onclick="closeModal('modal-lightbox')"
+        class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-pink transition">
         ✕
       </button>
-      <img id="lightbox-image" src="" alt="Zoomed Asset" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border-2 border-brand-pink/40 object-contain"/>
+      <img id="lightbox-image" src="" alt="Zoomed Asset"
+        class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border-2 border-brand-pink/40 object-contain" />
       <p id="lightbox-caption" class="text-xs font-chunky text-brand-butter mt-3 text-center"></p>
     </div>
   </div>
@@ -598,12 +734,13 @@
   <!-- ========================================================================= -->
   <!-- TOAST NOTIFICATION CONTAINER -->
   <!-- ========================================================================= -->
-  <div id="toast-container" class="fixed top-6 bg-brand-pink text-white font-chunky text-xs px-4 py-2.5 rounded-full shadow-2xl border-2 border-white/30 hidden z-50 tracking-wide pointer-events-none">
+  <div id="toast-container"
+    class="fixed top-6 bg-brand-pink text-white font-chunky text-xs px-4 py-2.5 rounded-full shadow-2xl border-2 border-white/30 hidden z-50 tracking-wide pointer-events-none">
     Notification
   </div>
 
   <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
 </body>
-</html>
 
+</html>
