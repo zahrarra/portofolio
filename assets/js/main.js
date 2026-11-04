@@ -40,7 +40,7 @@ const portfolioData = {
     desc: 'Konten carousel, promosi produk, dan live report untuk kebutuhan publikasi organisasi di media sosial.',
     projects: [
       {
-        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png'],
+        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png', 'assets/images/cloud-carousel-3.png', 'assets/images/cloud-carousel-4.png', 'assets/images/cloud-carousel-5.png'],
         name: 'Carousel Edukasi Cloud Computing',
         role: 'Desainer Konten',
         year: '2025',
@@ -71,6 +71,7 @@ const portfolioData = {
     desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
       {
+        images: ['assets/images/poster-calling-tenants.png'],
         name: 'Poster Calling for Tenants — IFEST 2026',
         role: 'Desainer',
         year: '2026',
@@ -78,13 +79,17 @@ const portfolioData = {
         description: 'Poster "Calling for Tenants" untuk kebutuhan promosi IFEST 2026.'
       },
       {
+        images: ['assets/images/volunteerone-mockup.png'],
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
+        link: 'https://www.figma.com/design/cW9tNTefM6zC2cNKFU3nUH/klp-analisis?node-id=0-1&t=VlWixyA4UYPcyBbs-1',
+        linkLabel: 'Lihat Desain di Figma',
         role: 'UI/UX Designer',
         year: '2025',
         tags: ['Figma', 'UI/UX', 'Mobile App'],
         description: 'Desain aplikasi mobile yang menghubungkan relawan dengan organisasi sosial — merancang konsep, alur pengguna (user flow), dan antarmuka menggunakan Figma.'
       },
       {
+        images: ['assets/images/rumah-sedekah-mockup.png'],
         name: 'Rumah Sedekah — Desain Website Donasi',
         role: 'Web Designer',
         year: '2025',
@@ -99,7 +104,7 @@ const portfolioData = {
     desc: 'Dokumentasi foto & video kegiatan kampus dan organisasi untuk kebutuhan publikasi.',
     projects: [
       {
-        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png'],
+        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png', 'assets/images/ifest-pov-1.png', 'assets/images/ifest-ekraf.png', 'assets/images/ifest-pov-2.png'],
         name: 'Dokumentasi IFEST 2025 & 2026',
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
@@ -177,6 +182,7 @@ function openShowcase(categoryKey) {
         <div class="flex flex-wrap gap-1">
           ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
         </div>
+        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
       </div>
     `;
     }).join('');

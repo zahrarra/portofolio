@@ -47,10 +47,15 @@ python -m http.server 8000
    - `video-ifest.mp4` — video promosi IFEST
    - `video-organisasi.mp4` — video kegiatan organisasi
 3. Upload gambar bukti karya ke folder `assets/images/` (nama file harus persis):
-   - `carousel-cloud-1.png`, `carousel-cloud-2.png` — bukti carousel Cloud Computing
+   - `carousel-cloud-1.png`, `carousel-cloud-2.png`, `cloud-carousel-3.png`,
+     `cloud-carousel-4.png`, `cloud-carousel-5.png` — bukti carousel Cloud Computing
    - `playbox-lokasi.png` — bukti konten Play Box
    - `live-report-bazar.png` — bukti desain live report bazar
-   - `ifest-video-1.png`, `ifest-video-2.png`, `ifest-video-3.png` — bukti dokumentasi IFEST
+   - `poster-calling-tenants.png` — bukti poster IFEST
+   - `volunteerone-mockup.png` — bukti UI VolunteerOne
+   - `rumah-sedekah-mockup.png` — bukti desain web Rumah Sedekah
+   - `ifest-video-1.png`, `ifest-video-2.png`, `ifest-video-3.png`,
+     `ifest-pov-1.png`, `ifest-ekraf.png`, `ifest-pov-2.png` — bukti dokumentasi IFEST
 
    Gambar otomatis tampil sebagai galeri di dalam modal chapter masing-masing
    (klik gambar untuk zoom). Jika file belum ada, modal tampil seperti biasa tanpa error.
