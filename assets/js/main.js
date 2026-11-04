@@ -164,25 +164,23 @@ function openShowcase(categoryKey) {
     `).join('');
     listEl.innerHTML = videoGallery + data.projects.map((p) => {
       const thumbs = (p.images || []).map((src) => `
-        <div class="rounded-lg overflow-hidden border border-white/10 cursor-pointer group/img shrink-0" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
+        <div class="snap-start shrink-0 w-24 sm:w-28 rounded-lg overflow-hidden border border-white/10 cursor-pointer group/img" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
           <img src="${src}" alt="Bukti karya" loading="lazy" class="w-full aspect-square object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="this.parentElement.style.display='none'">
         </div>`).join('');
-      const sideGallery = thumbs ? `<div class="w-24 shrink-0 space-y-2">${thumbs}</div>` : '';
+      const swipeGallery = thumbs ? `<div class="mt-3 flex gap-2 overflow-x-auto pb-1 snap-x snap-mandatory" style="scrollbar-width:thin">${thumbs}</div>` : '';
       return `
-      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition flex gap-3">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-start justify-between gap-2 mb-1.5">
-            <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
-            <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
-          </div>
-          <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
-          <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
-          <div class="flex flex-wrap gap-1">
-            ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
-          </div>
-          ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
+      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
+          <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
         </div>
-        ${sideGallery}
+        <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
+        <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
+        <div class="flex flex-wrap gap-1">
+          ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
+        </div>
+        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
+        ${swipeGallery}
       </div>
     `;
     }).join('');
