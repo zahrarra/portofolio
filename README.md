@@ -42,5 +42,12 @@ python -m http.server 8000
 ## 📝 Yang perlu dilengkapi
 
 1. Tambahkan `assets/images/zahra-portrait.jpg` (foto profil)
-2. Ganti placeholder showreel dengan link/embed video (YouTube unlisted / TikTok)
+2. Upload file video MP4 ke folder `assets/videos/` (buat foldernya dulu):
+   - `showreel.mp4` — video unggulan 16:9
+   - `video-ifest.mp4` — video promosi IFEST
+   - `video-organisasi.mp4` — video kegiatan organisasi
+
+   Video diputar langsung di web (player bawaan browser), tanpa upload ke platform mana pun.
+   Tips: kompres ke 720p dan usahakan < 50 MB per file (batas GitHub 100 MB/file).
+   Catatan: file binary tidak bisa lewat konektor — upload via GitHub web (Add file → Upload files) di branch ini.
 3. Deploy gratis ke Vercel / Netlify / GitHub Pages

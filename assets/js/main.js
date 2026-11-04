@@ -218,3 +218,26 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
+// Local video slots: tampilkan <video> hanya jika file-nya ada di repo,
+// jika belum ada tampilkan placeholder yang cantik.
+document.querySelectorAll('.showreel-slot').forEach(async (slot) => {
+  const url = slot.getAttribute('data-video');
+  const video = slot.querySelector('video');
+  const placeholder = slot.querySelector('.showreel-placeholder');
+  if (!url || !video) return;
+  let exists = false;
+  if (window.location.protocol.indexOf('http') === 0) {
+    try {
+      const res = await fetch(url, { method: 'HEAD' });
+      exists = res.ok;
+    } catch (e) { exists = false; }
+  } else {
+    // file:// — biarkan browser mencoba memuat file lokal langsung
+    exists = true;
+  }
+  if (exists) {
+    video.hidden = false;
+    if (placeholder) placeholder.style.display = 'none';
+  }
+});
