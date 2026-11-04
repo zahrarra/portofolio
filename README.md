@@ -46,8 +46,17 @@ python -m http.server 8000
    - `showreel.mp4` — video unggulan 16:9
    - `video-ifest.mp4` — video promosi IFEST
    - `video-organisasi.mp4` — video kegiatan organisasi
+3. Upload gambar bukti karya ke folder `assets/images/` (nama file harus persis):
+   - `carousel-cloud-1.png`, `carousel-cloud-2.png` — bukti carousel Cloud Computing
+   - `playbox-lokasi.png` — bukti konten Play Box
+   - `live-report-bazar.png` — bukti desain live report bazar
+   - `ifest-video-1.png`, `ifest-video-2.png`, `ifest-video-3.png` — bukti dokumentasi IFEST
+
+   Gambar otomatis tampil sebagai galeri di dalam modal chapter masing-masing
+   (klik gambar untuk zoom). Jika file belum ada, modal tampil seperti biasa tanpa error.
 
    Video diputar langsung di web (player bawaan browser), tanpa upload ke platform mana pun.
    Tips: kompres ke 720p dan usahakan < 50 MB per file (batas GitHub 100 MB/file).
-   Catatan: file binary tidak bisa lewat konektor — upload via GitHub web (Add file → Upload files) di branch ini.
-3. Deploy gratis ke Vercel / Netlify / GitHub Pages
+   Catatan: file binary tidak bisa lewat konektor — upload via GitHub web (Add file → Upload files)
+   di branch ini, atau via git lokal seperti biasa.
+4. Deploy gratis ke Vercel / Netlify / GitHub Pages

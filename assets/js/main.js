@@ -6,9 +6,17 @@
 // Portfolio showcase projects data for Table of Contents
 const portfolioData = {
   video: {
-    title: '1. VIDEO EDITING 🎬',
+    title: '1. VIDEO EDITING',
     icon: '🎬',
     desc: 'Edit video untuk media sosial & promosi acara — dipotong, diberi ritme, dan disesuaikan dengan gaya konten menggunakan CapCut.',
+    videos: [
+      'assets/videos/IMG_0152.mp4',
+      'assets/videos/IMG_0154.MP4',
+      'assets/videos/IMG_0155.MP4',
+      'assets/videos/IMG_0156.MP4',
+      'assets/videos/IMG_0157.MP4',
+      'assets/videos/IMG_0158.MP4'
+    ],
     projects: [
       {
         name: 'Konten Video Promosi IFEST 2026',
@@ -27,11 +35,12 @@ const portfolioData = {
     ]
   },
   social: {
-    title: '2. MEDIA SOSIAL 📱',
+    title: '2. MEDIA SOSIAL',
     icon: '📱',
     desc: 'Konten carousel, promosi produk, dan live report untuk kebutuhan publikasi organisasi di media sosial.',
     projects: [
       {
+        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png'],
         name: 'Carousel Edukasi Cloud Computing',
         role: 'Desainer Konten',
         year: '2025',
@@ -39,6 +48,7 @@ const portfolioData = {
         description: 'Konten edukasi mengenai Cloud Computing untuk media sosial HMTI — disusun dalam format carousel Instagram agar materi tersampaikan ringkas dan mudah dipahami.'
       },
       {
+        images: ['assets/images/playbox-lokasi.png'],
         name: 'Konten Promosi Play Box',
         role: 'Desainer Konten',
         year: '2025',
@@ -46,6 +56,7 @@ const portfolioData = {
         description: 'Pembuatan konten media sosial untuk mempromosikan Play Box sebagai permainan portable — visual menarik untuk meningkatkan daya tarik produk.'
       },
       {
+        images: ['assets/images/live-report-bazar.png'],
         name: 'Desain Live Report Bazar',
         role: 'Desainer',
         year: '2025',
@@ -55,7 +66,7 @@ const portfolioData = {
     ]
   },
   design: {
-    title: '3. DESAIN 🎨',
+    title: '3. DESAIN',
     icon: '🎨',
     desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
@@ -83,11 +94,12 @@ const portfolioData = {
     ]
   },
   doc: {
-    title: '4. DOKUMENTASI 📷',
+    title: '4. DOKUMENTASI',
     icon: '📷',
     desc: 'Dokumentasi foto & video kegiatan kampus dan organisasi untuk kebutuhan publikasi.',
     projects: [
       {
+        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png'],
         name: 'Dokumentasi IFEST 2025 & 2026',
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
@@ -139,8 +151,23 @@ function openShowcase(categoryKey) {
   if (descEl) descEl.textContent = data.desc;
 
   if (listEl) {
-    listEl.innerHTML = data.projects.map((p) => `
+    const videoGallery = (data.videos || []).map((src) => `
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-black">
+        <video class="w-full aspect-video bg-black" controls playsinline preload="metadata">
+          <source src="${src}" type="video/mp4">
+          Browser kamu tidak mendukung pemutaran video.
+        </video>
+      </div>
+    `).join('');
+    listEl.innerHTML = videoGallery + data.projects.map((p) => {
+      const gallery = (p.images || []).map((src) => `
+        <div class="rounded-xl overflow-hidden border border-white/10 cursor-pointer group/img" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
+          <img src="${src}" alt="Bukti karya" loading="lazy" class="w-full object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="this.parentElement.style.display='none'">
+        </div>`).join('');
+      const galleryWrap = gallery ? `<div class="grid ${p.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mb-2.5">${gallery}</div>` : '';
+      return `
       <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition">
+        ${galleryWrap}
         <div class="flex items-start justify-between gap-2 mb-1.5">
           <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
           <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
@@ -151,7 +178,8 @@ function openShowcase(categoryKey) {
           ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   openModal('modal-showcase');
