@@ -40,7 +40,6 @@ const portfolioData = {
     desc: 'Konten carousel, promosi produk, dan live report untuk kebutuhan publikasi organisasi di media sosial.',
     projects: [
       {
-        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.47.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.48.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (1).png'],
         name: 'Carousel Edukasi Cloud Computing',
         role: 'Desainer Konten',
         year: '2025',
@@ -48,7 +47,6 @@ const portfolioData = {
         description: 'Konten edukasi mengenai Cloud Computing untuk media sosial HMTI — disusun dalam format carousel Instagram agar materi tersampaikan ringkas dan mudah dipahami.'
       },
       {
-        images: ['assets/images/playbox-lokasi.png'],
         name: 'Konten Promosi Play Box',
         role: 'Desainer Konten',
         year: '2025',
@@ -56,7 +54,6 @@ const portfolioData = {
         description: 'Pembuatan konten media sosial untuk mempromosikan Play Box sebagai permainan portable — visual menarik untuk meningkatkan daya tarik produk.'
       },
       {
-        images: ['assets/images/live-report-bazar.png'],
         name: 'Desain Live Report Bazar',
         role: 'Desainer',
         year: '2025',
@@ -71,7 +68,6 @@ const portfolioData = {
     desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
       {
-        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (4).png'],
         name: 'Poster Calling for Tenants — IFEST 2026',
         role: 'Desainer',
         year: '2026',
@@ -79,7 +75,6 @@ const portfolioData = {
         description: 'Poster "Calling for Tenants" untuk kebutuhan promosi IFEST 2026.'
       },
       {
-        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (2).png'],
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
         role: 'UI/UX Designer',
         year: '2025',
@@ -87,7 +82,6 @@ const portfolioData = {
         description: 'Desain aplikasi mobile yang menghubungkan relawan dengan organisasi sosial — merancang konsep, alur pengguna (user flow), dan antarmuka menggunakan Figma.'
       },
       {
-        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (3).png'],
         name: 'Rumah Sedekah — Desain Website Donasi',
         role: 'Web Designer',
         year: '2025',
@@ -102,7 +96,6 @@ const portfolioData = {
     desc: 'Dokumentasi foto & video kegiatan kampus dan organisasi untuk kebutuhan publikasi.',
     projects: [
       {
-        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49 (1).png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49 (2).png'],
         name: 'Dokumentasi IFEST 2025 & 2026',
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
@@ -162,30 +155,20 @@ function openShowcase(categoryKey) {
         </video>
       </div>
     `).join('');
-    listEl.innerHTML = videoGallery + data.projects.map((p) => {
-      const thumbs = (p.images || []).map((src) => `
-        <div class="rounded-lg overflow-hidden border border-white/10 cursor-pointer group/img shrink-0" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
-          <img src="${src}" alt="Bukti karya" loading="lazy" class="w-full aspect-square object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="this.parentElement.style.display='none'">
-        </div>`).join('');
-      const sideGallery = thumbs ? `<div class="w-24 shrink-0 space-y-2">${thumbs}</div>` : '';
-      return `
-      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition flex gap-3">
-        <div class="flex-1 min-w-0">
-          <div class="flex items-start justify-between gap-2 mb-1.5">
-            <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
-            <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
-          </div>
-          <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
-          <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
-          <div class="flex flex-wrap gap-1">
-            ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
-          </div>
-          ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
+    listEl.innerHTML = videoGallery + data.projects.map((p) => `
+      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
+          <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
         </div>
-        ${sideGallery}
+        <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
+        <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
+        <div class="flex flex-wrap gap-1">
+          ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
+        </div>
+        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
       </div>
-    `;
-    }).join('');
+    `).join('');
   }
 
   openModal('modal-showcase');
