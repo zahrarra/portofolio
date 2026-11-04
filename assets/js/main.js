@@ -41,6 +41,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Carousel Edukasi Cloud Computing',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.18.00.jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01.jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01 (1).jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01 (2).jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.02.jpeg'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Instagram', 'Carousel', 'Edukasi'],
@@ -48,6 +49,7 @@ const portfolioData = {
       },
       {
         name: 'Konten Promosi Play Box',
+        images: ['assets/images/playbox-zona.png'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Promosi Produk', 'Media Sosial'],
@@ -55,6 +57,7 @@ const portfolioData = {
       },
       {
         name: 'Desain Live Report Bazar',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.04.png'],
         role: 'Desainer',
         year: '2025',
         tags: ['Live Report', 'Publikasi Acara'],
@@ -69,6 +72,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Poster Calling for Tenants — IFEST 2026',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (4).png'],
         role: 'Desainer',
         year: '2026',
         tags: ['Poster', 'Event', 'Canva'],
@@ -76,6 +80,7 @@ const portfolioData = {
       },
       {
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.03 (1).png'],
         role: 'UI/UX Designer',
         year: '2025',
         tags: ['Figma', 'UI/UX', 'Mobile App'],
@@ -83,6 +88,7 @@ const portfolioData = {
       },
       {
         name: 'Rumah Sedekah — Desain Website Donasi',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.03.png'],
         role: 'Web Designer',
         year: '2025',
         tags: ['Web Design', 'Donasi'],
@@ -97,6 +103,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Dokumentasi IFEST 2025 & 2026',
+        images: ['assets/images/ifest-doc-1.png','assets/images/ifest-doc-2.png','assets/images/ifest-doc-3.png','assets/images/ifest-doc-4.png','assets/images/ifest-doc-5.png'],
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
         tags: ['Foto', 'Video', 'Event'],
@@ -155,7 +162,13 @@ function openShowcase(categoryKey) {
         </video>
       </div>
     `).join('');
-    listEl.innerHTML = videoGallery + data.projects.map((p) => `
+    listEl.innerHTML = videoGallery + data.projects.map((p) => {
+      const thumbs = (p.images || []).map((src) => `
+        <div class="snap-start shrink-0 w-24 sm:w-28 rounded-lg overflow-hidden border border-white/10 cursor-pointer group/img" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
+          <img src="${src}" alt="Bukti karya" loading="lazy" class="w-full aspect-square object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="this.parentElement.style.display='none'">
+        </div>`).join('');
+      const swipeGallery = thumbs ? `<div class="mt-3 flex gap-2 overflow-x-auto pb-1 snap-x snap-mandatory" style="scrollbar-width:thin">${thumbs}</div>` : '';
+      return `
       <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition">
         <div class="flex items-start justify-between gap-2 mb-1.5">
           <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
@@ -167,8 +180,10 @@ function openShowcase(categoryKey) {
           ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
         </div>
         ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
+        ${swipeGallery}
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   openModal('modal-showcase');
