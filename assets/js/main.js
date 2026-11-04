@@ -41,7 +41,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Carousel Edukasi Cloud Computing',
-        images: ['assets/images/carousel-1.jpg','assets/images/carousel-2.jpg','assets/images/carousel-3.jpg','assets/images/carousel-4.jpg','assets/images/carousel-5.jpg'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.18.00.jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01.jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01 (1).jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.01 (2).jpeg','assets/images/WhatsApp Image 2026-11-04 at 14.18.02.jpeg'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Instagram', 'Carousel', 'Edukasi'],
