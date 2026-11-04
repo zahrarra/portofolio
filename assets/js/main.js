@@ -57,7 +57,7 @@ const portfolioData = {
       },
       {
         name: 'Desain Live Report Bazar',
-        images: ['assets/images/live-report-bazar.png','assets/images/live-report-hitam.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.04.png'],
         role: 'Desainer',
         year: '2025',
         tags: ['Live Report', 'Publikasi Acara'],
@@ -80,7 +80,7 @@ const portfolioData = {
       },
       {
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
-        images: ['assets/images/volunteerone-board.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.03 (1).png'],
         role: 'UI/UX Designer',
         year: '2025',
         tags: ['Figma', 'UI/UX', 'Mobile App'],
@@ -88,7 +88,7 @@ const portfolioData = {
       },
       {
         name: 'Rumah Sedekah — Desain Website Donasi',
-        images: ['assets/images/rumah-sedekah-board.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.03.png'],
         role: 'Web Designer',
         year: '2025',
         tags: ['Web Design', 'Donasi'],
