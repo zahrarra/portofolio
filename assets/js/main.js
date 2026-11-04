@@ -41,6 +41,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Carousel Edukasi Cloud Computing',
+        images: ['assets/images/carousel-1.jpg','assets/images/carousel-2.jpg','assets/images/carousel-3.jpg','assets/images/carousel-4.jpg','assets/images/carousel-5.jpg'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Instagram', 'Carousel', 'Edukasi'],
@@ -48,6 +49,7 @@ const portfolioData = {
       },
       {
         name: 'Konten Promosi Play Box',
+        images: ['assets/images/playbox-zona.png'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Promosi Produk', 'Media Sosial'],
@@ -55,6 +57,7 @@ const portfolioData = {
       },
       {
         name: 'Desain Live Report Bazar',
+        images: ['assets/images/live-report-bazar.png','assets/images/live-report-hitam.png'],
         role: 'Desainer',
         year: '2025',
         tags: ['Live Report', 'Publikasi Acara'],
@@ -69,6 +72,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Poster Calling for Tenants — IFEST 2026',
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (4).png'],
         role: 'Desainer',
         year: '2026',
         tags: ['Poster', 'Event', 'Canva'],
@@ -76,6 +80,7 @@ const portfolioData = {
       },
       {
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
+        images: ['assets/images/volunteerone-board.png'],
         role: 'UI/UX Designer',
         year: '2025',
         tags: ['Figma', 'UI/UX', 'Mobile App'],
@@ -83,6 +88,7 @@ const portfolioData = {
       },
       {
         name: 'Rumah Sedekah — Desain Website Donasi',
+        images: ['assets/images/rumah-sedekah-board.png'],
         role: 'Web Designer',
         year: '2025',
         tags: ['Web Design', 'Donasi'],
@@ -97,6 +103,7 @@ const portfolioData = {
     projects: [
       {
         name: 'Dokumentasi IFEST 2025 & 2026',
+        images: ['assets/images/ifest-doc-1.png','assets/images/ifest-doc-2.png','assets/images/ifest-doc-3.png','assets/images/ifest-doc-4.png','assets/images/ifest-doc-5.png'],
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
         tags: ['Foto', 'Video', 'Event'],
@@ -155,20 +162,30 @@ function openShowcase(categoryKey) {
         </video>
       </div>
     `).join('');
-    listEl.innerHTML = videoGallery + data.projects.map((p) => `
-      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
-          <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
+    listEl.innerHTML = videoGallery + data.projects.map((p) => {
+      const thumbs = (p.images || []).map((src) => `
+        <div class="rounded-lg overflow-hidden border border-white/10 cursor-pointer group/img shrink-0" onclick="openLightbox('${src}', '${p.name.replace(/'/g, "")}')">
+          <img src="${src}" alt="Bukti karya" loading="lazy" class="w-full aspect-square object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="this.parentElement.style.display='none'">
+        </div>`).join('');
+      const sideGallery = thumbs ? `<div class="w-24 shrink-0 space-y-2">${thumbs}</div>` : '';
+      return `
+      <div class="bg-black/30 p-3.5 rounded-2xl border border-white/10 hover:border-brand-pink/50 transition flex gap-3">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-start justify-between gap-2 mb-1.5">
+            <h4 class="font-chunky text-white text-sm tracking-wide">${p.name}</h4>
+            <span class="text-[10px] bg-brand-wine text-brand-butter px-2 py-0.5 rounded-full font-bold flex-shrink-0">${p.year}</span>
+          </div>
+          <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
+          <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
+          <div class="flex flex-wrap gap-1">
+            ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
+          </div>
+          ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
         </div>
-        <p class="text-[11px] text-brand-softPink font-bold mb-1.5">${p.role}</p>
-        <p class="text-xs text-brand-cream/80 leading-relaxed mb-2.5">${p.description}</p>
-        <div class="flex flex-wrap gap-1">
-          ${p.tags.map(tag => `<span class="text-[9.5px] bg-white/10 text-white/90 px-2 py-0.5 rounded-md font-medium">#${tag}</span>`).join('')}
-        </div>
-        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3.5 py-1.5 rounded-full shadow-md transition active:scale-95"><span>🔗</span><span>${p.linkLabel || 'Lihat Selengkapnya'}</span></a>` : ''}
+        ${sideGallery}
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   openModal('modal-showcase');
