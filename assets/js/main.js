@@ -40,7 +40,7 @@ const portfolioData = {
     desc: 'Konten carousel, promosi produk, dan live report untuk kebutuhan publikasi organisasi di media sosial.',
     projects: [
       {
-        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png', 'assets/images/cloud-carousel-3.png', 'assets/images/cloud-carousel-4.png', 'assets/images/cloud-carousel-5.png'],
+        images: ['assets/images/carousel-cloud-1.png', 'assets/images/carousel-cloud-2.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.47.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.48.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (1).png'],
         name: 'Carousel Edukasi Cloud Computing',
         role: 'Desainer Konten',
         year: '2025',
@@ -71,7 +71,7 @@ const portfolioData = {
     desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
       {
-        images: ['assets/images/poster-calling-tenants.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (4).png'],
         name: 'Poster Calling for Tenants — IFEST 2026',
         role: 'Desainer',
         year: '2026',
@@ -79,7 +79,7 @@ const portfolioData = {
         description: 'Poster "Calling for Tenants" untuk kebutuhan promosi IFEST 2026.'
       },
       {
-        images: ['assets/images/volunteerone-mockup.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (2).png'],
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
         role: 'UI/UX Designer',
         year: '2025',
@@ -87,7 +87,7 @@ const portfolioData = {
         description: 'Desain aplikasi mobile yang menghubungkan relawan dengan organisasi sosial — merancang konsep, alur pengguna (user flow), dan antarmuka menggunakan Figma.'
       },
       {
-        images: ['assets/images/rumah-sedekah-mockup.png'],
+        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (3).png'],
         name: 'Rumah Sedekah — Desain Website Donasi',
         role: 'Web Designer',
         year: '2025',
@@ -102,7 +102,7 @@ const portfolioData = {
     desc: 'Dokumentasi foto & video kegiatan kampus dan organisasi untuk kebutuhan publikasi.',
     projects: [
       {
-        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png', 'assets/images/ifest-pov-1.png', 'assets/images/ifest-ekraf.png', 'assets/images/ifest-pov-2.png'],
+        images: ['assets/images/ifest-video-1.png', 'assets/images/ifest-video-2.png', 'assets/images/ifest-video-3.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49.png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49 (1).png', 'assets/images/WhatsApp Image 2026-11-04 at 12.55.49 (2).png'],
         name: 'Dokumentasi IFEST 2025 & 2026',
         role: 'Tim Dokumentasi & Konten',
         year: '2025 - 2026',
