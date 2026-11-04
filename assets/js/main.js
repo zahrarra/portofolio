@@ -11,11 +11,11 @@ const portfolioData = {
     desc: 'Edit video untuk media sosial & promosi acara — dipotong, diberi ritme, dan disesuaikan dengan gaya konten menggunakan CapCut.',
     videos: [
       'assets/videos/IMG_0152.mp4',
+      'assets/videos/IMG_0158.MP4',
       'assets/videos/IMG_0154.MP4',
       'assets/videos/IMG_0155.MP4',
       'assets/videos/IMG_0156.MP4',
-      'assets/videos/IMG_0157.MP4',
-      'assets/videos/IMG_0158.MP4'
+      'assets/videos/IMG_0157.MP4'
     ],
     projects: [
       {
@@ -81,8 +81,6 @@ const portfolioData = {
       {
         images: ['assets/images/volunteerone-mockup.png'],
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
-        link: 'https://www.figma.com/design/cW9tNTefM6zC2cNKFU3nUH/klp-analisis?node-id=0-1&t=VlWixyA4UYPcyBbs-1',
-        linkLabel: 'Lihat Desain di Figma',
         role: 'UI/UX Designer',
         year: '2025',
         tags: ['Figma', 'UI/UX', 'Mobile App'],
@@ -257,11 +255,11 @@ document.addEventListener('keydown', (e) => {
 // Judul tidak ditampilkan di web; "title" hanya sebagai catatan internal.
 const showreelVideos = [
   { src: 'assets/videos/IMG_0152.mp4', title: 'Video Edit 1' },
-  { src: 'assets/videos/IMG_0154.MP4', title: 'Video Edit 2' },
-  { src: 'assets/videos/IMG_0155.MP4', title: 'Video Edit 3' },
-  { src: 'assets/videos/IMG_0156.MP4', title: 'Video Edit 4' },
-  { src: 'assets/videos/IMG_0157.MP4', title: 'Video Edit 5' },
-  { src: 'assets/videos/IMG_0158.MP4', title: 'Video Edit 6' }
+  { src: 'assets/videos/IMG_0158.MP4', title: 'Video Edit 2' },
+  { src: 'assets/videos/IMG_0154.MP4', title: 'Video Edit 3' },
+  { src: 'assets/videos/IMG_0155.MP4', title: 'Video Edit 4' },
+  { src: 'assets/videos/IMG_0156.MP4', title: 'Video Edit 5' },
+  { src: 'assets/videos/IMG_0157.MP4', title: 'Video Edit 6' }
 ];
 
 // Render grid showreel: tampilkan <video> jika file-nya ada,
