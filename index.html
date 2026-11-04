@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>Koziah Mae Perez — Playful Illustrative Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts for playful and clean typography -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800;900&family=Shrikhand&display=swap" rel="stylesheet"/>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              plum: '#4a0026',
+              deepPlum: '#2b0016',
+              wine: '#610a38',
+              pink: '#ff4f8b',
+              softPink: '#ff7fa8',
+              lightPink: '#fecdd3',
+              butter: '#ffdf6d',
+              cream: '#fffdfa',
+              mint: '#4ade80'
+            }
+          },
+          fontFamily: {
+            title: ['"Fredoka One"', '"Shrikhand"', 'cursive', 'sans-serif'],
+            hand: ['"Gaegu"', 'cursive', 'sans-serif'],
+            body: ['"Nunito"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-deepPlum bg-ambient-stars font-body text-brand-cream selection:bg-brand-pink selection:text-white antialiased min-h-screen flex flex-col items-center justify-start py-0 md:py-6 relative">
+
+  <!-- Desktop Top Control Bar (Visible on md+ screens) -->
+  <nav class="hidden md:flex items-center justify-between w-full max-w-4xl px-6 py-2.5 mb-4 bg-brand-wine/70 backdrop-blur-md border border-brand-pink/25 rounded-2xl shadow-xl z-30">
+    <div class="flex items-center gap-2">
+      <span class="text-xl">🌸</span>
+      <span class="font-chunky text-white text-sm tracking-wide">Koziah Mae Perez</span>
+      <span class="text-xs text-brand-butter font-bold bg-brand-deepPlum/60 px-2.5 py-0.5 rounded-full border border-brand-pink/20">Stitch Design Implementation</span>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <!-- Toggle Mobile / Wide View Mode -->
+      <button onclick="toggleViewMode()" class="btn-bounce bg-brand-deepPlum hover:bg-brand-plum text-brand-cream text-xs font-chunky px-3.5 py-1.5 rounded-full border border-brand-pink/40 shadow-sm flex items-center gap-1.5 transition">
+        <span id="toggle-view-btn-text">Switch to 💻 Wide View</span>
+      </button>
+
+      <!-- View Original Stitch Screenshot Reference -->
+      <button onclick="openLightbox('assets/images/stitch-screenshot.png', 'Original Stitch Screen: Playful Illustrative Portfolio')" class="btn-bounce bg-brand-pink/20 hover:bg-brand-pink/40 text-brand-lightPink text-xs font-bold px-3 py-1.5 rounded-full border border-brand-pink/30 flex items-center gap-1 transition">
+        <span>🔍 Original Reference</span>
+      </button>
+
+      <!-- Quick Connect CTA -->
+      <button onclick="openModal('modal-contact')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-xs font-chunky px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 transition">
+        <span>Connect</span>
+        <span>💌</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile / Responsive Container (Original Stitch max-w-[430px] with smooth desktop responsiveness) -->
+  <main id="main-portfolio-container" class="w-full max-w-[430px] bg-portfolio-gradient min-h-screen relative overflow-hidden flex flex-col shadow-2xl md:rounded-3xl border-0 md:border-4 md:border-brand-wine/80 transition-all duration-300 pb-16">
+
+    <!-- BEGIN: HeroSection -->
+    <header class="relative px-6 pt-10 pb-6 flex flex-col items-center">
+      <!-- Decorative Doodles Background -->
+      <div class="absolute top-8 left-4 text-brand-butter text-2xl select-none animate-pulse">✦</div>
+      <div class="absolute top-20 right-6 text-brand-butter text-xl select-none animate-pulse-soft">✷</div>
+      <div class="absolute top-44 left-8 text-brand-butter text-lg select-none">✺</div>
+
+      <!-- Main Playful Portfolio Badge & Typography -->
+      <div class="w-full flex items-center justify-between mt-2">
+        <div class="relative flex flex-col z-10">
+          <!-- Year Stamp -->
+          <div class="inline-block self-start mb-1 ml-4 bg-brand-wine border border-brand-pink/50 rounded-full px-2.5 py-0.5 shadow-sm">
+            <span class="text-[11px] font-chunky text-white tracking-wider">2025</span>
+          </div>
+          
+          <!-- "PORT" -->
+          <div class="flex items-center text-5xl font-chunky tracking-tight text-white drop-shadow-md select-none">
+            <span class="text-brand-softPink letter-tilt-1 cursor-pointer">P</span>
+            <span class="text-brand-pink letter-tilt-2 cursor-pointer">O</span>
+            <span class="text-brand-softPink letter-tilt-3 cursor-pointer">R</span>
+            <span class="text-white letter-tilt-4 cursor-pointer">T</span>
+          </div>
+
+          <!-- "FOLIO" with Flower 'O' -->
+          <div class="flex items-center text-5xl font-chunky tracking-tight text-white drop-shadow-md -mt-1 select-none">
+            <span class="text-white letter-tilt-2 cursor-pointer">F</span>
+            <!-- Flower 'O' Doodle with interactive spin on hover -->
+            <span class="relative inline-flex items-center justify-center mx-0.5 cursor-pointer group" title="Spinning Flower Doodle">
+              <svg class="w-10 h-10 text-brand-butter animate-spin-slow drop-shadow group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 100 100">
+                <path d="M50 20 C55 5, 75 5, 75 25 C90 25, 95 45, 80 55 C95 65, 85 85, 70 80 C60 95, 40 95, 30 80 C15 85, 5 65, 20 55 C5 45, 10 25, 25 25 C25 5, 45 5, 50 20 Z"></path>
+              </svg>
+              <span class="absolute w-3.5 h-3.5 rounded-full bg-brand-wine"></span>
+            </span>
+            <span class="text-brand-softPink letter-tilt-3 cursor-pointer">L</span>
+            <span class="text-white letter-tilt-1 cursor-pointer">I</span>
+            <span class="text-brand-pink letter-tilt-4 cursor-pointer">O</span>
+          </div>
+        </div>
+
+        <!-- House / Cottage Illustration -->
+        <div class="relative w-36 h-36 flex-shrink-0" data-purpose="cottage-illustration">
+          <!-- Forest / Pine Trees behind -->
+          <div class="absolute -top-3 right-3 flex space-x-1 opacity-95">
+            <svg class="w-7 h-10 text-emerald-800" fill="currentColor" viewBox="0 0 40 60">
+              <polygon points="20,0 35,25 28,25 38,45 25,45 25,58 15,58 15,45 2,45 12,25 5,25"></polygon>
+            </svg>
+            <svg class="w-8 h-12 text-emerald-700 -ml-2" fill="currentColor" viewBox="0 0 40 60">
+              <polygon points="20,0 35,25 28,25 38,45 25,45 25,58 15,58 15,45 2,45 12,25 5,25"></polygon>
+            </svg>
+          </div>
+
+          <!-- Cottage House Graphic -->
+          <div class="relative w-full h-full flex flex-col items-center justify-end">
+            <!-- Roof -->
+            <div class="w-32 h-14 bg-brand-pink rounded-t-xl relative border-b-4 border-brand-wine shadow-md transform -skew-x-2">
+              <div class="absolute inset-x-2 bottom-1 h-1.5 bg-brand-softPink rounded-full opacity-60"></div>
+            </div>
+            <!-- House Body -->
+            <div class="w-28 h-20 bg-amber-50 rounded-b-lg border-2 border-amber-200/50 flex items-center justify-between px-3 relative shadow-inner">
+              <!-- Window with shutter -->
+              <div class="w-9 h-11 bg-pink-100 border-2 border-brand-pink rounded-sm flex flex-col p-0.5">
+                <div class="w-full h-1/2 border-b border-brand-pink/50"></div>
+                <div class="w-full h-1/2"></div>
+              </div>
+              <!-- Front Door -->
+              <div class="w-8 h-14 bg-brand-pink rounded-t-md self-end border-t border-l border-brand-wine/30 flex items-center justify-end pr-1 cursor-pointer hover:bg-brand-softPink transition-colors" title="Knock knock!">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+              </div>
+            </div>
+            <!-- Green Grass Base -->
+            <div class="w-36 h-2 bg-emerald-700/80 rounded-full -mt-1 blur-[0.5px]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome Subtitle -->
+      <p class="mt-3 text-xs md:text-sm font-doodle tracking-wide text-brand-cream/80 text-center flex items-center gap-1.5 select-none">
+        <span>Welcome to my humble</span>
+        <span class="text-brand-butter font-bold italic underline decoration-wavy decoration-brand-pink">home!</span>
+        <span class="text-brand-pink">✿</span>
+      </p>
+    </header>
+    <!-- END: HeroSection -->
+
+    <!-- BEGIN: AboutMe -->
+    <section class="px-5 py-4" data-purpose="about-me-section">
+      <!-- "Hello!" Title with Doodles -->
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-4xl font-chunky text-brand-butter tracking-wider drop-shadow-md select-none">
+          Hello!
+        </h2>
+        <div class="text-xs bg-brand-wine/70 text-brand-cream/90 px-3 py-1 rounded-full border border-brand-pink/20 font-bold select-none">
+          Profile &amp; Bio ✦
+        </div>
+      </div>
+
+      <!-- Bio Intro Text -->
+      <p class="text-xs text-brand-cream/90 leading-relaxed font-body mb-5 bg-black/20 p-3 rounded-2xl backdrop-blur-sm border border-white/5">
+        I'm <strong class="text-brand-butter font-bold">Koziah Mae Perez</strong>, a 23-year-old designer passionate about creating charming and creative visuals for print and digital platforms. My work combines playful aesthetics with thoughtful storytelling, bringing ideas to life through illustration and design.
+      </p>
+
+      <!-- Profile Portrait & Badges Grid -->
+      <div class="flex items-center gap-4">
+        <!-- Polaroid/ID Style Portrait Card with Click to Zoom -->
+        <div class="relative w-36 flex-shrink-0 cursor-pointer group" onclick="openLightbox('assets/images/koziah-portrait.jpg', 'Koziah Mae Perez — Portrait')">
+          <div class="bg-brand-butter rounded-3xl p-1.5 shadow-lg transform -rotate-1 group-hover:rotate-0 transition-transform duration-200 relative">
+            <!-- Cute sticker flower -->
+            <div class="absolute -top-2 -left-2 text-xl drop-shadow select-none animate-bounce">🌸</div>
+            
+            <div class="w-full h-44 rounded-2xl overflow-hidden bg-brand-plum relative">
+              <img alt="Koziah Mae Perez Portrait" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" src="assets/images/koziah-portrait.jpg" onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuCP4-tWqEBGr0voyb5VVi8p9TetDE9Vxg5lYC76llgfgh4B4eOZv_fDSr3XRwErVwtV1Nyq1V_L7R2EDEdRf3ujxMML0t35IODo50S2QmnAqebs_nll-iIc2w4TiLBYkbnQjrWNX7MKWshWKGOo_nVdKfuTzxtU-BENLpELo9qfyPLtVouuWsIkUu0NQro3JcZra_iGxNSm2lqdt13SDjL9sR9Wj3LMB4biBZEg3J4L';"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              
+              <!-- Zoom overlay hint -->
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <span class="bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded-full backdrop-blur-sm">🔍 Zoom</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cute Roles Stickers -->
+          <div class="absolute -bottom-2 -left-2 bg-white text-brand-wine px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-md transform -rotate-3 border border-pink-200 select-none">
+            Illustrator ✏️
+          </div>
+          <div class="absolute -top-2 -right-3 bg-white text-brand-pink px-2 py-0.5 rounded-full text-[9px] font-bold shadow-md transform rotate-6 border border-pink-200 select-none">
+            Graphic Designer
+          </div>
+        </div>
+
+        <!-- Right Side: Contact & Info -->
+        <div class="flex-1 flex flex-col justify-between space-y-3">
+          <!-- Let's Connect Button -->
+          <div class="flex flex-col items-start space-y-1">
+            <button onclick="openModal('modal-contact')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink transition text-white px-4 py-1.5 rounded-full text-xs font-chunky tracking-wide shadow-md active:scale-95 flex items-center gap-1.5">
+              <span>Let's Connect</span>
+              <span class="text-xs">💌</span>
+            </button>
+          </div>
+
+          <!-- Social Contact Mini Info -->
+          <div class="space-y-1.5 text-[11px] font-medium text-brand-cream/85">
+            <!-- Email (with one-click copy) -->
+            <button onclick="copyEmail('keziahprzegmail.com')" class="flex items-center gap-2 hover:text-brand-butter transition truncate text-left w-full group" title="Click to copy email">
+              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">✉</span>
+              <span class="truncate">keziahprzegmail.com</span>
+            </button>
+            
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-butter transition group">
+              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white font-bold transition">f</span>
+              <span>Keziah Mae Perez</span>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-butter transition group">
+              <span class="w-5 h-5 rounded-full bg-brand-wine/80 group-hover:bg-brand-pink flex items-center justify-center text-xs text-brand-softPink group-hover:text-white transition">📷</span>
+              <span>keysayaaaaa</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: AboutMe -->
+
+    <!-- BEGIN: SkillsAndEducation -->
+    <section class="px-5 py-3 space-y-4" data-purpose="skills-and-education">
+      <!-- Technical Skills Section -->
+      <div>
+        <div class="flex items-baseline justify-between mb-2">
+          <h3 class="text-base font-chunky text-white tracking-wide flex items-center gap-1.5 select-none">
+            <span>Technical Skills</span>
+            <span class="text-brand-butter text-xs">✨</span>
+          </h3>
+          <span class="text-[10px] text-brand-cream/60 italic">*still learning</span>
+        </div>
+
+        <!-- Badges Scrollable Row -->
+        <div class="flex flex-wrap gap-1.5 items-center">
+          <span class="bg-brand-butter text-brand-deepPlum px-2.5 py-1 rounded-xl text-[11px] font-chunky shadow-sm cursor-default hover:scale-105 transition-transform">Canva</span>
+          <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-xl text-xs font-bold shadow-sm cursor-default hover:scale-105 transition-transform">✏️ Pro</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors" title="Adobe Photoshop">Ps</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors" title="Adobe Lightroom">Lr</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors" title="Adobe InDesign">Id</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors">✂ CapCut</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors" title="Adobe After Effects">Ae</span>
+          <span class="bg-brand-wine border border-pink-400/30 text-brand-cream px-2 py-1 rounded-xl text-xs font-chunky cursor-default hover:border-brand-pink transition-colors" title="Adobe Illustrator">Ai</span>
+        </div>
+      </div>
+
+      <!-- Education & Personal Skills Split Columns -->
+      <div class="grid grid-cols-2 gap-3 pt-1">
+        <!-- Education Column -->
+        <div class="bg-black/25 p-3 rounded-2xl border border-white/5 hover:border-white/15 transition-colors">
+          <h4 class="text-xs font-chunky text-brand-butter mb-2 flex items-center gap-1 select-none">
+            <span>Education</span>
+            <span>🎓</span>
+          </h4>
+          <ul class="text-[10px] space-y-2 text-brand-cream/80 leading-tight">
+            <li>
+              <span class="font-bold text-white block">• University of Batangas</span>
+              <span class="text-[9px] text-brand-lightPink/70">2021 - 2025</span>
+              <span class="block text-[9.5px]">Bachelor of Multimedia Arts</span>
+            </li>
+            <li>
+              <span class="font-bold text-white block">• STI College Batangas</span>
+              <span class="text-[9px] text-brand-lightPink/70">2018 - 2020</span>
+              <span class="block text-[9.5px]">HUMSS Strand</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Personal Skills Column -->
+        <div class="bg-black/25 p-3 rounded-2xl border border-white/5 hover:border-white/15 transition-colors">
+          <h4 class="text-xs font-chunky text-brand-butter mb-2 flex items-center gap-1 select-none">
+            <span>Personal Skills</span>
+            <span>⭐</span>
+          </h4>
+          <ul class="text-[10.5px] space-y-1 text-brand-cream/85">
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Time Management
+            </li>
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Attention to Detail
+            </li>
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Collaboration
+            </li>
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Communication
+            </li>
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Leadership
+            </li>
+            <li class="flex items-center gap-1">
+              <span class="text-brand-pink text-[10px]">✔</span> Adaptability
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- END: SkillsAndEducation -->
+
+    <!-- BEGIN: ExperienceAndAffiliation -->
+    <section class="px-5 py-4 mt-2" data-purpose="experience-and-affiliation">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-lg font-chunky text-brand-butter tracking-wide drop-shadow select-none">
+          Experience &amp; Affiliation
+        </h3>
+        <span class="text-lg select-none">🌿</span>
+      </div>
+
+      <!-- Experience Cards Grid/Layout -->
+      <div class="space-y-4">
+        <!-- Pink Rounded Sticky Note Card -->
+        <div class="relative bg-brand-pink text-white rounded-3xl p-4 shadow-lg border border-pink-400/40 hover:shadow-xl transition-shadow">
+          <!-- Flower Pushpin / Sticker -->
+          <div class="absolute -top-2.5 right-6 text-xl select-none">🌸</div>
+          <ul class="text-[11px] space-y-2.5 leading-snug">
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Creative Director
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">ATBP. Expo (2025)</p>
+            </li>
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Director, Screenwriter, Graphic Designer
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">Bihag ng Dialysis: Documentary Film (2025)</p>
+            </li>
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Graphic Designer
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">CineMMediA (2025)</p>
+            </li>
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Production Designer, Graphic Designer &amp; Screenwriter
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">Palamara Films (2024)</p>
+            </li>
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Public Relations Officer
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">Univ. of Batangas Student Government (2024)</p>
+            </li>
+            <li>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-butter"></span>
+                Graphic Designer (Freelance)
+              </p>
+              <p class="text-[10px] text-pink-100 pl-3">2024 - Present</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Window Frame Container with Illustration -->
+        <div class="relative bg-[#340b1e] border-4 border-[#521b33] rounded-3xl p-4 pt-5 shadow-xl">
+          <!-- Window Header Scallop / Pelmet Detail -->
+          <div class="absolute -top-3 left-4 right-4 flex justify-around">
+            <span class="w-6 h-3 bg-[#521b33] rounded-b-full"></span>
+            <span class="w-6 h-3 bg-[#521b33] rounded-b-full"></span>
+            <span class="w-6 h-3 bg-[#521b33] rounded-b-full"></span>
+            <span class="w-6 h-3 bg-[#521b33] rounded-b-full"></span>
+          </div>
+
+          <div class="flex items-start justify-between gap-3">
+            <!-- Left List inside Window -->
+            <ul class="text-[10.5px] space-y-2 leading-tight text-brand-cream/85 flex-1">
+              <li>
+                <strong class="text-white block">• Art Intern</strong>
+                <span class="text-[9.5px] text-brand-lightPink/80">Summit Media - Summit Books (Jul - Sep 2024)</span>
+              </li>
+              <li>
+                <strong class="text-white block">• Visual Artist</strong>
+                <span class="text-[9.5px] text-brand-lightPink/80">Batangueñong Grupo sa Sining (2023 - 2024)</span>
+              </li>
+              <li>
+                <strong class="text-white block">• Chief of Illustration</strong>
+                <span class="text-[9.5px] text-brand-lightPink/80">Future Multimedia Artists Society (2023 - 2024)</span>
+              </li>
+              <li>
+                <strong class="text-white block">• Art Director</strong>
+                <span class="text-[9.5px] text-brand-lightPink/80">UB Studio 1946 (2023)</span>
+              </li>
+              <li>
+                <strong class="text-white block">• Student Journalist (Cartoonist)</strong>
+                <span class="text-[9.5px] text-brand-lightPink/80">The Southern Pulse (2018 - 2020)</span>
+              </li>
+            </ul>
+
+            <!-- Right Window Sill: Polaroid Artwork & Potted Plant with Zoom -->
+            <div class="w-28 flex flex-col items-center">
+              <div class="bg-white p-1.5 pb-3 rounded-lg shadow-lg rotate-3 hover:rotate-0 transition-transform duration-200 border border-gray-200 relative cursor-pointer group" onclick="openLightbox('assets/images/koziah-artwork.jpg', 'Art Girl ✿ — Character Illustration')">
+                <!-- Heart Sticker -->
+                <div class="absolute -top-1.5 -right-1 text-xs select-none animate-pulse">💖</div>
+                <div class="w-20 h-24 overflow-hidden rounded bg-pink-100 relative">
+                  <img alt="Character Illustration Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/images/koziah-artwork.jpg" onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuD3z1f-3ODg3JHU17-hhtupu4Uo7lSsDpoOH2eM8nyQL_Md5H0TDpDt71R9Ipq6m3I-jDHBWUObbO4u3EFhuJ2cHjdcfF7jTCDAd40ibYKljVoETl32FWxfe4Fs49YKnZ_oosu1l3FbtVH5NRA5m8nv-Qm0Wb3WY5KWJiR6bG7pmMMTb9N3Kf578Zy5xxV5q7sx8Vxv_UvsciyV-2wt-086eACDkGfjdhPZbnASz7Zr';"/>
+                </div>
+                <!-- Cute smiley face on frame -->
+                <div class="text-[9px] font-bold text-center mt-1 text-gray-700 select-none">Art Girl ✿</div>
+              </div>
+
+              <!-- Potted plant on sill -->
+              <div class="mt-2 flex items-center justify-center text-sm select-none" title="Growing with love!">
+                🪴
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: ExperienceAndAffiliation -->
+
+    <!-- BEGIN: TableOfContents -->
+    <section class="px-5 pt-4 pb-2 relative z-10" data-purpose="table-of-contents">
+      <!-- Playful Section Heading -->
+      <div class="text-center mb-5 select-none">
+        <div class="inline-flex items-center gap-1 text-brand-pink text-xs font-chunky tracking-widest uppercase">
+          <span>〰️</span>
+          <span>Table of</span>
+          <span>〰️</span>
+        </div>
+        <h3 class="text-3xl font-chunky text-brand-butter tracking-wider flex items-center justify-center gap-2 drop-shadow-md">
+          <span>CONTENT</span>
+          <span class="text-brand-butter text-xl">✶</span>
+        </h3>
+        <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">Click a chapter below to view featured works! 📖✨</p>
+      </div>
+
+      <!-- Pill Nav Buttons Grid (2x2) -->
+      <div class="grid grid-cols-2 gap-3" data-purpose="showcase-nav-pills">
+        <!-- 1. Brand Identity -->
+        <button onclick="openShowcase('brand')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+          <span>1. BRAND IDENTITY</span>
+        </button>
+
+        <!-- 3. Posters -->
+        <button onclick="openShowcase('posters')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+          <span>3. POSTERS</span>
+        </button>
+
+        <!-- 2. Social Media -->
+        <button onclick="openShowcase('social')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+          <span>2. SOCIAL MEDIA</span>
+        </button>
+
+        <!-- 4. Photography -->
+        <button onclick="openShowcase('photo')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white font-chunky text-xs py-3 px-2 rounded-full border-2 border-brand-softPink/60 pill-shadow transition text-center shadow-md flex items-center justify-center gap-1">
+          <span>4. PHOTOGRAPHY</span>
+        </button>
+      </div>
+    </section>
+    <!-- END: TableOfContents -->
+
+    <!-- BEGIN: FooterLandscape -->
+    <footer class="mt-4 relative" data-purpose="whimsical-landscape-footer">
+      <!-- Winding Path / Road Illustration leading into the horizon -->
+      <div class="relative w-full h-32 overflow-hidden">
+        <!-- Mountain/Hills backdrop -->
+        <div class="absolute inset-0 bg-[#240313]"></div>
+        
+        <!-- Curving Hill Shape -->
+        <svg class="absolute bottom-0 w-full h-28" fill="none" preserveAspectRatio="none" viewBox="0 0 430 120">
+          <path d="M0,70 Q130,20 280,60 T430,30 L430,120 L0,120 Z" fill="#38051e"></path>
+          <path d="M0,90 Q150,45 320,80 T430,60 L430,120 L0,120 Z" fill="#1f0211"></path>
+          <!-- Cute Winding Road -->
+          <path d="M120,120 C180,105 280,100 370,70 C390,63 410,55 430,50 L430,65 C390,75 330,105 200,120 Z" fill="#b8a898" opacity="0.9"></path>
+          <!-- Road edge highlight -->
+          <path d="M120,120 C180,105 280,100 370,70" fill="none" stroke="#fef3c7" stroke-dasharray="4 4" stroke-width="2"></path>
+        </svg>
+
+        <!-- Cute Pine Trees on Hillside -->
+        <div class="absolute bottom-6 right-8 text-emerald-800 text-lg select-none">🌲</div>
+        <div class="absolute bottom-8 right-16 text-emerald-900 text-base select-none">🌲</div>
+        <div class="absolute bottom-4 left-6 text-emerald-900 text-base select-none">🌱</div>
+
+        <!-- Copyright / Mini signature note -->
+        <div class="absolute bottom-2 inset-x-0 text-center select-none">
+          <p class="text-[9.5px] text-brand-cream/60 font-doodle tracking-widest uppercase">
+            Designed with love &amp; playfulness • Koziah Mae Perez © 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- END: FooterLandscape -->
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: Table of Contents Showcase Drawer -->
+  <!-- ========================================================================= -->
+  <div id="modal-showcase" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+      <!-- Modal Header -->
+      <div class="bg-brand-wine/80 px-5 py-4 border-b border-brand-pink/30 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span id="showcase-icon" class="text-2xl">🎨</span>
+          <div>
+            <h3 id="showcase-title" class="font-chunky text-white text-base tracking-wide">Brand Identity</h3>
+            <p id="showcase-desc" class="text-[11px] text-brand-lightPink/80 leading-tight">Featured works &amp; case studies</p>
+          </div>
+        </div>
+        <button onclick="closeModal('modal-showcase')" class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body (Projects List) -->
+      <div id="showcase-list" class="p-5 overflow-y-auto space-y-3 flex-1">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-brand-wine/40 px-5 py-3 border-t border-white/5 flex items-center justify-between text-xs">
+        <span class="text-brand-cream/60 font-doodle">Koziah Mae Perez Portfolio</span>
+        <button onclick="closeModal('modal-showcase')" class="bg-brand-pink hover:bg-brand-softPink text-white font-chunky px-4 py-1.5 rounded-full text-xs shadow-md transition">
+          Close Chapter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: Let's Connect Contact Modal -->
+  <!-- ========================================================================= -->
+  <div id="modal-contact" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-brand-deepPlum border-2 border-brand-pink/50 rounded-3xl w-full max-w-sm flex flex-col shadow-2xl overflow-hidden relative">
+      <div class="bg-brand-wine px-5 py-4 border-b border-brand-pink/30 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">💌</span>
+          <h3 class="font-chunky text-white text-base tracking-wide">Let's Connect!</h3>
+        </div>
+        <button onclick="closeModal('modal-contact')" class="w-8 h-8 rounded-full bg-brand-plum hover:bg-brand-pink text-white flex items-center justify-center text-sm transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-5 space-y-4">
+        <p class="text-xs text-brand-cream/80 leading-relaxed">
+          Have an exciting project, illustration inquiry, or just want to say hi? Feel free to reach out anytime! 🌸
+        </p>
+
+        <!-- Quick copy email box -->
+        <div class="bg-black/30 p-3 rounded-2xl border border-white/10 flex items-center justify-between">
+          <div class="truncate mr-2">
+            <span class="text-[10px] text-brand-butter uppercase font-bold block">Email Address</span>
+            <span class="text-xs text-white font-mono truncate">keziahprzegmail.com</span>
+          </div>
+          <button onclick="copyEmail('keziahprzegmail.com')" class="btn-bounce bg-brand-pink hover:bg-brand-softPink text-white text-[11px] font-chunky px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 transition flex-shrink-0">
+            <span>Copy</span>
+            <span>📋</span>
+          </button>
+        </div>
+
+        <!-- Social links -->
+        <div class="space-y-2 pt-1">
+          <a href="mailto:keziahprzegmail.com" class="w-full bg-brand-wine hover:bg-brand-plum text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 border border-brand-pink/20 transition">
+            <span>Send Direct Email</span>
+            <span>✉️</span>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full bg-black/20 hover:bg-black/40 text-brand-lightPink text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-2 border border-white/5 transition">
+            <span>Follow on Instagram (@keysayaaaaa)</span>
+            <span>📷</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: Lightbox for Image Zoom -->
+  <!-- ========================================================================= -->
+  <div id="modal-lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4" onclick="closeModal('modal-lightbox')">
+    <div class="relative max-w-2xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeModal('modal-lightbox')" class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-pink transition">
+        ✕
+      </button>
+      <img id="lightbox-image" src="" alt="Zoomed Asset" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border-2 border-brand-pink/40 object-contain"/>
+      <p id="lightbox-caption" class="text-xs font-chunky text-brand-butter mt-3 text-center"></p>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ========================================================================= -->
+  <div id="toast-container" class="fixed top-6 bg-brand-pink text-white font-chunky text-xs px-4 py-2.5 rounded-full shadow-2xl border-2 border-white/30 hidden z-50 tracking-wide pointer-events-none">
+    Notification
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
