@@ -5,115 +5,101 @@
 
 // Portfolio showcase projects data for Table of Contents
 const portfolioData = {
-  brand: {
-    title: '1. BRAND IDENTITY',
-    icon: '🎨',
-    desc: 'Thoughtful visual systems, charming logos, and brand guidelines combining storytelling with playful warmth.',
+  video: {
+    title: '1. VIDEO EDITING 🎬',
+    icon: '🎬',
+    desc: 'Edit video untuk media sosial & promosi acara — dipotong, diberi ritme, dan disesuaikan dengan gaya konten menggunakan CapCut.',
     projects: [
       {
-        name: 'ATBP. Expo 2025 Branding',
-        role: 'Creative Director',
+        name: 'Konten Video Promosi IFEST 2026',
+        role: 'Tim Konten (Editor Video)',
+        year: '2026',
+        tags: ['CapCut', 'Instagram', 'Promosi Acara'],
+        description: 'Video promosi untuk akun @ifest_untad, termasuk konten "POV: Ketua Pelaksana" — diedit dengan ritme cepat khas konten media sosial.'
+      },
+      {
+        name: 'Konten Video Kegiatan Organisasi',
+        role: 'Editor Video',
         year: '2025',
-        tags: ['Identity', 'Exhibition Design', 'Typography'],
-        description: 'Complete visual identity including mascot illustrations, banners, catalogs, and wayfinding signage for the annual multimedia showcase.'
-      },
-      {
-        name: 'Palamara Films Identity',
-        role: 'Production & Graphic Designer',
-        year: '2024',
-        tags: ['Film Studio', 'Branding', 'Stationery'],
-        description: 'Visual identity system for an independent film production house, featuring custom typography and cinematic merchandise packaging.'
-      },
-      {
-        name: 'Batangueñong Grupo sa Sining',
-        role: 'Visual Artist',
-        year: '2023 - 2024',
-        tags: ['Cultural Collective', 'Logo System'],
-        description: 'Revitalized identity honoring Batangas folk culture, featuring handcrafted calligraphy and regional color palettes.'
+        tags: ['CapCut', 'Dokumentasi', 'Media Sosial'],
+        description: 'Video dokumentasi dan publikasi berbagai kegiatan kampus, diedit menggunakan CapCut untuk kebutuhan media sosial organisasi.'
       }
     ]
   },
   social: {
-    title: '2. SOCIAL MEDIA',
+    title: '2. MEDIA SOSIAL 📱',
     icon: '📱',
-    desc: 'High-engagement social layouts, motion stickers, aesthetic story templates, and informative carousel graphics.',
+    desc: 'Konten carousel, promosi produk, dan live report untuk kebutuhan publikasi organisasi di media sosial.',
     projects: [
       {
-        name: 'UB Student Government Campaigns',
-        role: 'Public Relations Officer',
-        year: '2024',
-        tags: ['Instagram', 'Infographics', 'Student Engagement'],
-        description: 'Visual campaign strategies that boosted student council post reach by 180% through colorful illustrated guides and timely updates.'
-      },
-      {
-        name: 'CineMMediA Social Feeds',
-        role: 'Graphic Designer',
+        name: 'Carousel Edukasi Cloud Computing',
+        role: 'Desainer Konten',
         year: '2025',
-        tags: ['Promo Assets', 'Event Countdown', 'Motion Stills'],
-        description: 'Promotional countdowns, speaker announcements, and ticketing launch graphics for the regional film festival.'
+        tags: ['Instagram', 'Carousel', 'Edukasi'],
+        description: 'Konten edukasi mengenai Cloud Computing untuk media sosial HMTI — disusun dalam format carousel Instagram agar materi tersampaikan ringkas dan mudah dipahami.'
       },
       {
-        name: 'Freelance Lifestyle & Creator Kits',
-        role: 'Freelance Designer',
-        year: '2024 - Present',
-        tags: ['Canva Pro Kits', 'Carousels', 'Covers'],
-        description: 'Bespoke illustrated social media toolkits and editable templates for content creators, authors, and indie shops.'
+        name: 'Konten Promosi Play Box',
+        role: 'Desainer Konten',
+        year: '2025',
+        tags: ['Promosi Produk', 'Media Sosial'],
+        description: 'Pembuatan konten media sosial untuk mempromosikan Play Box sebagai permainan portable — visual menarik untuk meningkatkan daya tarik produk.'
+      },
+      {
+        name: 'Desain Live Report Bazar',
+        role: 'Desainer',
+        year: '2025',
+        tags: ['Live Report', 'Publikasi Acara'],
+        description: 'Desain live report untuk publikasi kegiatan bazar di media sosial dengan konsistensi visual dan keterbacaan informasi yang baik.'
       }
     ]
   },
-  posters: {
-    title: '3. POSTERS',
-    icon: '📜',
-    desc: 'Compelling film posters, editorial broadsides, and event banners with strong visual hierarchy and bespoke illustrations.',
+  design: {
+    title: '3. DESAIN 🎨',
+    icon: '🎨',
+    desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
       {
-        name: 'Bihag ng Dialysis (Official Documentary Poster)',
-        role: 'Director, Screenwriter & Poster Designer',
+        name: 'Poster Calling for Tenants — IFEST 2026',
+        role: 'Desainer',
+        year: '2026',
+        tags: ['Poster', 'Event', 'Canva'],
+        description: 'Poster "Calling for Tenants" untuk kebutuhan promosi IFEST 2026.'
+      },
+      {
+        name: 'VolunteerOne — UI/UX Aplikasi Mobile',
+        role: 'UI/UX Designer',
         year: '2025',
-        tags: ['Film Poster', 'Key Art', 'Typography'],
-        description: 'Official theatrical key visual for the documentary film exploring the courage of dialysis patients and their families.'
+        tags: ['Figma', 'UI/UX', 'Mobile App'],
+        description: 'Desain aplikasi mobile yang menghubungkan relawan dengan organisasi sosial — merancang konsep, alur pengguna (user flow), dan antarmuka menggunakan Figma.'
       },
       {
-        name: 'FMAS Annual Art Fair Poster',
-        role: 'Chief of Illustration',
-        year: '2024',
-        tags: ['Screenprint Aesthetic', 'Art Fair'],
-        description: 'A vibrant limited-run print poster celebrating student illustrators, printed in duotone pink and lemon butter inks.'
-      },
-      {
-        name: 'The Southern Pulse Campus Broadsheets',
-        role: 'Student Cartoonist',
-        year: '2018 - 2020',
-        tags: ['Editorial', 'Satirical Illustration'],
-        description: 'Hand-drawn front-page editorial cartoons commenting on community events and educational reforms.'
+        name: 'Rumah Sedekah — Desain Website Donasi',
+        role: 'Web Designer',
+        year: '2025',
+        tags: ['Web Design', 'Donasi'],
+        description: 'Desain website donasi untuk memudahkan masyarakat menemukan program bantuan, melihat informasi donasi, dan menyalurkan bantuan secara online.'
       }
     ]
   },
-  photo: {
-    title: '4. PHOTOGRAPHY',
+  doc: {
+    title: '4. DOKUMENTASI 📷',
     icon: '📷',
-    desc: 'Warm documentary stills, production set photography, and charming portrait series with rich natural grain.',
+    desc: 'Dokumentasi foto & video kegiatan kampus dan organisasi untuk kebutuhan publikasi.',
     projects: [
       {
-        name: 'Bihag ng Dialysis — On-Set Production Stills',
-        role: 'Director / Still Photographer',
+        name: 'Dokumentasi IFEST 2025 & 2026',
+        role: 'Tim Dokumentasi & Konten',
+        year: '2025 - 2026',
+        tags: ['Foto', 'Video', 'Event'],
+        description: 'Dokumentasi foto dan video rangkaian kegiatan IFEST untuk kebutuhan publikasi media sosial.'
+      },
+      {
+        name: 'Dokumentasi Dies Natalis HMTI 2025',
+        role: 'Tim Dokumentasi & Konten',
         year: '2025',
-        tags: ['Documentary', 'Lightroom', 'Set Life'],
-        description: 'Behind-the-scenes archival photography capturing emotional interviews, clinical environments, and raw heartfelt moments.'
-      },
-      {
-        name: 'Batangas Cultural Heritage Series',
-        role: 'Documentary Photographer',
-        year: '2023',
-        tags: ['Street Life', 'Portraits', 'Warm Grade'],
-        description: 'A visual archive celebrating local Batangueño artisans, ancestral home details, and seaside fishing communities.'
-      },
-      {
-        name: 'Summit Books Character & Book Shoots',
-        role: 'Art Intern',
-        year: '2024',
-        tags: ['Editorial', 'Product Mockups'],
-        description: 'Creative flat lays and styled book aesthetic photography for young adult and illustrated novel launches.'
+        tags: ['Foto', 'Video', 'Event'],
+        description: 'Dokumentasi foto dan video kegiatan Dies Natalis HMTI sebagai arsip dan bahan publikasi.'
       }
     ]
   }
