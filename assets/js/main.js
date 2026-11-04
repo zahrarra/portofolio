@@ -71,14 +71,6 @@ const portfolioData = {
     desc: 'Poster acara, desain UI/UX aplikasi, dan desain web — dibuat dengan Canva dan Figma.',
     projects: [
       {
-        name: 'Poster Calling for Tenants — IFEST 2026',
-        images: ['assets/images/WhatsApp Image 2026-11-04 at 12.55.48 (4).png'],
-        role: 'Desainer',
-        year: '2026',
-        tags: ['Poster', 'Event', 'Canva'],
-        description: 'Poster "Calling for Tenants" untuk kebutuhan promosi IFEST 2026.'
-      },
-      {
         name: 'VolunteerOne — UI/UX Aplikasi Mobile',
         images: ['assets/images/WhatsApp Image 2026-11-04 at 14.21.03 (1).png'],
         role: 'UI/UX Designer',
