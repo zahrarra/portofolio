@@ -415,49 +415,9 @@
         <p class="text-[11px] font-doodle text-brand-cream/70 mt-1">Kumpulan hasil edit videoku ✨</p>
       </div>
 
-      <!-- Featured Showreel (16:9) — file video: assets/videos/showreel.mp4 -->
-      <div class="showreel-slot relative w-full aspect-video rounded-3xl border-2 border-brand-pink/30 overflow-hidden bg-black/40" data-video="assets/videos/showreel.mp4">
-        <video class="absolute inset-0 w-full h-full bg-black" controls playsinline preload="metadata" hidden>
-          <source src="assets/videos/showreel.mp4" type="video/mp4">
-          Browser kamu tidak mendukung pemutaran video.
-        </video>
-        <div class="showreel-placeholder absolute inset-0 flex flex-col items-center justify-center gap-2 select-none">
-          <div class="w-16 h-16 rounded-full bg-brand-pink/90 flex items-center justify-center shadow-xl">
-            <span class="text-white text-2xl ml-1">▶</span>
-          </div>
-          <p class="text-sm font-chunky text-white tracking-wide">Showreel 2026</p>
-          <p class="text-[10px] text-brand-cream/60 font-doodle px-6 text-center">Upload file <span class="font-mono">assets/videos/showreel.mp4</span> ke repo 🎥</p>
-        </div>
-      </div>
-
-      <!-- Smaller Video Cards -->
-      <div class="grid grid-cols-2 gap-3 mt-3">
-        <!-- Kartu video 1 — file: assets/videos/video-ifest.mp4 -->
-        <div class="showreel-slot relative aspect-video rounded-2xl border border-brand-pink/25 overflow-hidden bg-black/40" data-video="assets/videos/video-ifest.mp4">
-          <video class="absolute inset-0 w-full h-full bg-black" controls playsinline preload="metadata" hidden>
-            <source src="assets/videos/video-ifest.mp4" type="video/mp4">
-            Browser kamu tidak mendukung pemutaran video.
-          </video>
-          <div class="showreel-placeholder absolute inset-0 flex flex-col items-center justify-center gap-1 select-none">
-            <div class="w-10 h-10 rounded-full bg-brand-wine/90 border border-brand-pink/40 flex items-center justify-center">
-              <span class="text-brand-butter text-sm ml-0.5">▶</span>
-            </div>
-            <p class="text-[10px] font-chunky text-brand-cream/90 px-2 text-center leading-tight">Video Promosi IFEST</p>
-          </div>
-        </div>
-        <!-- Kartu video 2 — file: assets/videos/video-organisasi.mp4 -->
-        <div class="showreel-slot relative aspect-video rounded-2xl border border-brand-pink/25 overflow-hidden bg-black/40" data-video="assets/videos/video-organisasi.mp4">
-          <video class="absolute inset-0 w-full h-full bg-black" controls playsinline preload="metadata" hidden>
-            <source src="assets/videos/video-organisasi.mp4" type="video/mp4">
-            Browser kamu tidak mendukung pemutaran video.
-          </video>
-          <div class="showreel-placeholder absolute inset-0 flex flex-col items-center justify-center gap-1 select-none">
-            <div class="w-10 h-10 rounded-full bg-brand-wine/90 border border-brand-pink/40 flex items-center justify-center">
-              <span class="text-brand-butter text-sm ml-0.5">▶</span>
-            </div>
-            <p class="text-[10px] font-chunky text-brand-cream/90 px-2 text-center leading-tight">Video Kegiatan Organisasi</p>
-          </div>
-        </div>
+      <!-- Grid video — daftar file & judul diatur di assets/js/main.js (showreelVideos) -->
+      <div id="showreel-grid" class="grid grid-cols-2 gap-3">
+        <!-- Diisi otomatis via JavaScript -->
       </div>
       <p class="text-[10px] text-brand-cream/50 font-doodle text-center mt-2 px-4">Video diputar langsung di sini — tanpa upload ke platform mana pun 🔒</p>
     </section>

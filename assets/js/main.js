@@ -219,25 +219,41 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-// Local video slots: tampilkan <video> hanya jika file-nya ada di repo,
-// jika belum ada tampilkan placeholder yang cantik.
-document.querySelectorAll('.showreel-slot').forEach(async (slot) => {
-  const url = slot.getAttribute('data-video');
-  const video = slot.querySelector('video');
-  const placeholder = slot.querySelector('.showreel-placeholder');
-  if (!url || !video) return;
-  let exists = false;
-  if (window.location.protocol.indexOf('http') === 0) {
-    try {
-      const res = await fetch(url, { method: 'HEAD' });
-      exists = res.ok;
-    } catch (e) { exists = false; }
-  } else {
-    // file:// — biarkan browser mencoba memuat file lokal langsung
-    exists = true;
-  }
-  if (exists) {
-    video.hidden = false;
-    if (placeholder) placeholder.style.display = 'none';
-  }
-});
+// Daftar video showreel — nama file HARUS persis sama (termasuk huruf besar/kecil).
+// Judul tidak ditampilkan di web; "title" hanya sebagai catatan internal.
+const showreelVideos = [
+  { src: 'assets/videos/IMG_0152.mp4', title: 'Video Edit 1' },
+  { src: 'assets/videos/IMG_0154.MP4', title: 'Video Edit 2' },
+  { src: 'assets/videos/IMG_0155.MP4', title: 'Video Edit 3' },
+  { src: 'assets/videos/IMG_0156.MP4', title: 'Video Edit 4' },
+  { src: 'assets/videos/IMG_0157.MP4', title: 'Video Edit 5' },
+  { src: 'assets/videos/IMG_0158.MP4', title: 'Video Edit 6' }
+];
+
+// Render grid showreel: tampilkan <video> jika file-nya ada,
+// placeholder cantik jika belum ada.
+(function renderShowreel() {
+  const grid = document.getElementById('showreel-grid');
+  if (!grid) return;
+  const isHttp = window.location.protocol.indexOf('http') === 0;
+  showreelVideos.forEach((v) => {
+    const card = document.createElement('div');
+    card.className = 'relative aspect-video rounded-2xl border border-brand-pink/25 overflow-hidden bg-black/40';
+    card.innerHTML =
+      '<video class="absolute inset-0 w-full h-full bg-black" controls playsinline preload="metadata" hidden>' +
+        '<source src="' + v.src + '" type="video/mp4">' +
+        'Browser kamu tidak mendukung pemutaran video.' +
+      '</video>' +
+      '<div class="showreel-placeholder absolute inset-0 flex items-center justify-center select-none">' +
+        '<div class="w-10 h-10 rounded-full bg-brand-wine/90 border border-brand-pink/40 flex items-center justify-center">' +
+          '<span class="text-brand-butter text-sm ml-0.5">▶</span>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+    const video = card.querySelector('video');
+    const placeholder = card.querySelector('.showreel-placeholder');
+    const show = () => { video.hidden = false; placeholder.style.display = 'none'; };
+    if (!isHttp) { show(); return; } // file:// — biarkan browser memuat file lokal langsung
+    fetch(v.src, { method: 'HEAD' }).then((res) => { if (res.ok) show(); }).catch(() => {});
+  });
+})();
