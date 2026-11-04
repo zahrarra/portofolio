@@ -49,7 +49,7 @@ const portfolioData = {
       },
       {
         name: 'Konten Promosi Play Box',
-        images: ['assets/images/playbox-zona.png'],
+        images: ['assets/images/image.png'],
         role: 'Desainer Konten',
         year: '2025',
         tags: ['Promosi Produk', 'Media Sosial'],
